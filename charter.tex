@@ -1,34 +1,34 @@
 \documentclass[
 11pt, % The default document font size, options: 10pt, 11pt, 12pt
-codirector, % Uncomment to add a codirector to the title page
+%codirector, % Uncomment to add a codirector to the title page
 ]{charter} 
 
 
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Título del proyecto} 
+\titulo{Desarrollo de aplicacion Hospitalaria con MQTT} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
-\posgrado{Carrera de Especialización en Sistemas Embebidos} 
-%\posgrado{Carrera de Especialización en Internet de las Cosas} 
+%\posgrado{Carrera de Especialización en Sistemas Embebidos} 
+\posgrado{Carrera de Especialización en Internet de las Cosas} 
 %\posgrado{Carrera de Especialización en Intelegencia Artificial}
 %\posgrado{Maestría en Sistemas Embebidos} 
 %\posgrado{Maestría en Internet de las cosas}
 
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
-\autor{Nombre del Autor} 
+\autor{Gustavo Bastian} 
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Nombre del Director}
-\pertenenciaDirector{pertenencia} 
+\director{Ericson Joseph Estupiñan Pineda}
+\pertenenciaDirector{Surix S.R.L} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
-\codirector{John Doe} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
-\pertenenciaCoDirector{FIUBA}
+%\codirector{John Doe} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
+%\pertenenciaCoDirector{FIUBA}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
-\cliente{Nombre del cliente}
-\empresaCliente{Empresa del cliente}
+\cliente{Sergio Starkloff}
+\empresaCliente{Surix S.R.L}
 
 % Nombre y pertenencia de los jurados, se pueden usar el cualquier lugar del documento con el comando \jurunoname, \jurdosname y \jurtresname y \perteunoname, \pertedosname y \pertetresname.
 \juradoUno{Nombre y Apellido (1)}
@@ -38,8 +38,8 @@ codirector, % Uncomment to add a codirector to the title page
 \juradoTres{Nombre y Apellido (3)}
 \pertenenciaJurTres{pertenencia (3)}
  
-\fechaINICIO{30 de abril de 2021}		%Fecha de inicio de la cursada de GdP \fechaInicioName
-\fechaFINALPlan{18 de junio de 2021} 	%Fecha de final de cursada de GdP
+\fechaINICIO{31 de Octubre de 2021}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaFINALPlan{7 de Diciembre de 2021} 	%Fecha de final de cursada de GdP
 \fechaFINALTrabajo{15 de mayo de 2022}	%Fecha de defensa pública del trabajo final
 
 
@@ -92,7 +92,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en \textcolor{red}{la implementación de un prototipo de un sistema de control de temperatura de un calefón}, y tendrá un presupuesto preliminar estimado de \textcolor{red}{600} hs de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en {la implementación de un prototipo de una aplicación móvil para enfermeras, utilizando el protocolo MQTT}, y tendrá un presupuesto preliminar estimado de \textcolor{red}{600} hs de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -116,90 +116,134 @@ Se adjunta a esta acta la planificación inicial.
 \label{sec:descripcion}
 
 
-\begin{consigna}{red} % El bloque "consigna" se usa para poner texto en rojo y dar una pequeña ayuda sobre cómo completar la sección
+\begin{consigna} % El bloque "consigna" se usa para poner texto en rojo y dar una pequeña ayuda sobre cómo completar la sección
+{black}
+En la actualidad, el avance de la Internet de las Cosas(IOT) y la disminución de costos asociados a la tecnología hacen factible su incorporación a distintos campos de la vida cotidiana. Uno de esos campos, es el de infraestructuras hospitalarias inteligentes. 
 
-El objetivo es que el lector en una o dos páginas entienda de qué se trata el proyecto y cuáles son sus desafíos, su motivación y su importancia.
+Por otra parte, dentro de las múltiples opciones para realizar la comunicación entre los dispositivos IOT, el protocolo message queuing telemetry transport(en adelante MQTT) se ha probado como un protocolo confiable y ampliamente utilizado.
 
-Se debe destacar claramente cuál es el valor que agrega el proyecto a realizar. ``El presente proyecto se destaca especialmente por incorporar tal cosa... Esto lo diferencia de otros sistemas similares en que ...''
+Dentro del contexto, en este trabajo se desarrollará una aplicación multiplataforma que utilizará el protocolo MQTT para los distintos participantes  de la actividad hospitalaria. El proyecto es una necesidad de la empresa Surix S.R.L. y se lleva a cabo como parte de la carrera Especialización de Internet de las Cosas.
 
-Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
+Surix S.R.L. es una firma que se dedica al desarrollo, fabricación y comercialización de productos IP y sistemas hospitalarios de calidad. Posee una comprobada trayectoria dentro del mercado local e internacional. Se destaca por su compromiso con la industria nacional, la mejora continua de sus productos y el soporte que brinda a sus clientes. Este proyecto se enmarca dentro del segundo ítem de su misión, porque mejora y extiende capacidades a un sistema existente. 
 
+Surix S.R.L fabrica un sistema IP de llamado a enfermera que está basado en el protocolo SIP. Este consiste en un servidor central y terminales que se encuentran en las habitaciones del hospital. La aplicación principal se ejecuta en una pc o bien en una tablet y monitorea el estado de las habitaciones. 
+ 
+El objetivo del proyecto es realizar un sistema con las ventajas que provee el protocolo MQTT: posibilidad de agregar accesorios rápidamente con bajo costo de software, hardware e implementación. 
+
+MQTT es un protocolo open source liviano (hecho que permite implementarlo en dispositivos con pocos recursos y baja velocidad de transmisión) ampliamente utilizado en dispositivos IOT. Está basado en la pila TCP/IP, se implementa en la capa de aplicación y sus mensajes se transmiten como colas de publicación/subscripción. 
+
+El desafío de este proyecto consiste en la programación de un sistema que contenga un servidor o broker MQTT, una base de datos donde alojar información de reportes de habitaciones/enfermeras y datos relevantes al paciente(incluyendo temporizadores para suministro de ciertos medicamentos y/o control), una página web para configuración y una aplicación multiplataforma donde se realice la gestión de datos e interacción con los clientes. La aplicación será capaz de identificar la cama correspondiente(mediante lectura de símbolos QR) y de transmitir mensajes de voz en caso de ser necesario.
+
+La motivación que origina la realización del sistema es generar las bases para poder incorporar otros dispositivos inteligentes al sistema principal a bajo costo(por ejemplo, en un futuro se puede monitorear la temperatura de la habitación y saber si sufre un desperfecto el aire acondicionado, escuchar sonidos dentro de la sala en caso de que el paciente no pueda acceder al llamador, etc).
+
+%El objetivo es que el lector en una o dos páginas entienda de qué se trata el 
+%proyecto y cuáles son sus desafíos, su motivación y su importancia.
+
+%Se debe destacar claramente cuál es el valor que agrega el proyecto a realizar. 
+%``El presente proyecto se destaca especialmente por incorporar tal cosa... Esto 
+%lo diferencia de otros sistemas similares en que ...''
+
+%Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
+
+%\begin{itemize}
+%	\item ¿Cómo se vincula este proyecto con la misión de la %organización?
+%	\item ¿Cómo se inserta este proyecto en el modelo de negocio de la organización?
+%	\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
+%	\item ¿En qué estado del ciclo de vida está el producto que se desea reemplazar o mejorar?
+%	\item ¿Cuáles son las necesidades que debe satisfacer?
+%	\item ¿Por dónde pasa la innovación?
+%\end{itemize}
+%
+%La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema} y una frase como la siguiente: ``En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''. Luego recién más abajo de haber puesto esta frase, se pone la figura. La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
+
+
+El proyecto completo consta de :
 \begin{itemize}
-	\item ¿Cómo se vincula este proyecto con la misión de la organización?
-	\item ¿Cómo se inserta este proyecto en el modelo de negocio de la organización?
-	\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
-	\item ¿En qué estado del ciclo de vida está el producto que se desea reemplazar o mejorar?
-	\item ¿Cuáles son las necesidades que debe satisfacer?
-	\item ¿Por dónde pasa la innovación?
+\item Broker
+\item Pantalla web de configuración
+\item Cliente médico
+\item Cliente enfermera
+\item Cliente sistema
 \end{itemize}
+En la figura 1, se presenta un diagrama de interconexión entre los dispositivos.
 
-La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema} y una frase como la siguiente: ``En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''. Luego recién más abajo de haber puesto esta frase, se pone la figura. La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
 
 %\vspace{25px}
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.5\textwidth]{./Figuras/diagBloques.png}
+\includegraphics[width=.7\textwidth]{./Figuras/diag1.pdf}
 \caption{Diagrama en bloques del sistema}
 \label{fig:diagBloques}
 \end{figure}
 
 \vspace{25px}
 
-El tamaño de la tipografía en TODAS las figuras debe ser adecuado para que NO pase lo que ocurre acá, donde el lector debe esforzarse para poder leer el texto. Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama, preferentemente en la gama de colores pastel.
+El broker recibe mensajes(llamados ``eventos'') de distintos publicadores y los reenviará a los subscriptores que correspondan según una política asignada previamente.
+
+El cliente sistema poseera una base de datos con información relevante para los pacientes. La aplicación del cliente sistema puede monitorear el estado de las habitaciones.
+  
+El cliente enfermera solo recibe asignaciones o respuestas de un médico, y publica finalización o consulta(por medio de una aplicación).
+
+El cliente médico solo recibe consulta y publica respuestas(por medio de una aplicación).
+
+Con la aplicacion web se puede cargar la base de datos con informacion de enfermeras, pacientes y médicos.
+\vfill
+
+ 
+%El tamaño de la tipografía en TODAS las figuras debe ser adecuado para que NO pase lo que ocurre acá, donde el lector debe esforzarse para poder leer el texto. Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama, preferentemente en la gama de colores pastel.
 \end{consigna}
 
 
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
 
-\begin{consigna}{red} 
-Nota: (borrar esto y todas las consignas en color rojo antes de entregar este documento).
+\begin{consigna}
+{black} 
+%Nota: (borrar esto y todas las consignas en color rojo antes de entregar este documento).
  
-Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos.
+%Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos.
  
-Si se considera que una persona cumple dos o más roles, entonces sólo dejarla en el rol más importante. Por ejemplo:
+%Si se considera que una persona cumple dos o más roles, entonces sólo dejarla en el rol más importante. Por ejemplo:
 
-\begin{itemize}
-\item Si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente.
-\item Si una persona es el Responsable, no debe ser colocado también como Miembro del equipo.
-\end{itemize}
+%Pero en cambio sí es usual que el Cliente y el Auspiciante sean el mismo, por ejemplo.
 
-Pero en cambio sí es usual que el Cliente y el Auspiciante sean el mismo, por ejemplo.
-
-\begin{table}[ht]
+\begin{table}[H]
 %\caption{Identificación de los interesados}
 %\label{tab:interesados}
 \begin{tabularx}{\linewidth}{@{}|l|X|X|l|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   &                   &              	&        	\\ \hline
-Cliente       & \clientename      &\empclientename	&        	\\ \hline
-Impulsor      &                   &              	&        	\\ \hline
+%Auspiciante   &                   &              	&        	\\ \hline
+Cliente       & \clientename      &\empclientename	& Propietario       	\\ \hline
+%Impulsor      &                   &              	&        	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores &                   &              	&        	\\ \hline
+Colaboradores & --                   & --             	& --       	\\ \hline
 Orientador    & \supname	      & \pertesupname 	& Director Trabajo final \\ \hline
-Equipo        & miembro1 \newline 
-				miembro2          &              	&        	\\ \hline
-Opositores    &                   &              	&        	\\ \hline
-Usuario final &                   &              	&        	\\ \hline
+%Equipo        & miembro1 \newline 
+%				miembro2          &              	&        	\\ \hline
+%Opositores    &                   &              	&        	\\ \hline
+Usuario final & Hospitales, personal de salud, administradores de sistemas         &  --            	&  --      	\\ \hline
 \end{tabularx}
 \end{table}
 
-El Director suele ser uno de los Orientadores.
+%El Director suele ser uno de los Orientadores.
 
-No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
+%No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
 
-No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
+%No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
 
-Es deseable listar a continuación las principales características de cada interesado.
+%Es deseable listar a continuación las principales características de cada interesado.
  
-Por ejemplo:
+%Por ejemplo:
 \begin{itemize}
-	\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
-	\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
-	\item Orientador: María Gómez va a poder ayudar mucho con la definición de los requerimientos.
+%	\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
+%	\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
+%	\item Orientador: María Gómez va a poder ayudar mucho con la definición de los requerimientos.
+\item Orientador: Ericson va a poder ayudar mucho con la definición de los requerimientos.
+\item Usuario final: Todos los usuarios del sistema como ser, administradores de redes hospitalarias, médicos y enfermeras, que deseen observar y/o controlar el proceso.
+
 \end{itemize}
 
 \end{consigna}
@@ -209,40 +253,72 @@ Por ejemplo:
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
-\begin{consigna}{red}
-¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
+\begin{consigna}
+{black}
+El propósito de este proyecto es desarrollar un sistema para gestión de enfermeras basado en el protocolo MQTT compuesto por un broker, una web de configuración y una o varias aplicaciones, que agilice el desarrollo de funcionalidades futuras.
+%¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
 
-Se recomienda que sea solo un párrafo que empiece diciendo ``El propósito de este proyecto es...''.
+%Se recomienda que sea solo un párrafo que empiece diciendo ``El propósito de este proyecto es...''.
 \end{consigna}
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
+\begin{consigna}
+{black}
+%¿Qué se incluye y que no se incluye en este proyecto?
 
-Se refiere al trabajo a hacer para entregar el producto o resultado especificado. 
+%Se refiere al trabajo a hacer para entregar el producto o resultado especificado. 
 
-Explicitar todo lo quede comprendido dentro del alcance del proyecto.
+%Explicitar todo lo quede comprendido dentro del alcance del proyecto.
 
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
+%Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
+El presente proyecto incluye:
 
+\begin{itemize}
+	\item Confección de plan de trabajo. 
+	\item Investigación y estudio de protocolo MQTT, bases de datos SQL y NoSQL, programación de aplicaciones web y programación de aplicaciones multiplataforma.	
+	\item Desarrollo local del broker que registre en un log, horario y actividades realizadas. 
+	\item Desarrollo local de página web de configuración.
+	\item Desarrollo local de aplicacion cliente médico con envío/recepción de mensajes de audio/texto/alarmas.
+	\item Desarrollo local de aplicacion cliente enfermera con envío/recepción de mensajes de audio/texto/alarmas y escaneo de QR para identificar paciente. 
+	\item Desarrollo local de aplicacion cliente sistema 
+
+	\item Documentación de las aplicaciones desarrolladas.
+
+\end{itemize}
+
+El presente proyecto no incluye:
+\begin{itemize}
+	\item Manuales de las distintas aplicaciones desarrolladas.
+	\item Traducciones a idiomas extranjeros de las aplicaciones y/o de la página web.
+	\item Sistema llamador del paciente.
+	\item Análisis en profundidad de tráfico en la red.
+	\item Análisis en profundidad de Seguridad.
+\end{itemize}
 \end{consigna}
 
 
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
-
-\begin{consigna}{red}
-``Para el desarrollo del presente proyecto se supone que: ...''
+Para el desarrollo del presente proyecto se supone que: 
 
 \begin{itemize}
-	\item Supuesto 1
-	\item Supuesto 2...
+	\item Existe un llamador paciente. 
+	\item Las aplicaciones moviles usaran iOS,Android y Windows Phone como sistema operativo.
+	\item La base de datos de los pacientes sólo puede ser afectada por medio de la aplicación sistema(el cliente médico sólo puede hacer consultas/modificaciones puntuales a una situación).
 \end{itemize}
 
-Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
-\end{consigna}
+%\begin{consigna}{red}
+%``Para el desarrollo del presente proyecto se supone que: ...''
+
+%\begin{itemize}
+%	\item Supuesto 1
+%	\item Supuesto 2...
+%\end{itemize}
+
+%Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
+%\end{consigna}
 
 \section{6. Requerimientos}
 \label{sec:requerimientos}
