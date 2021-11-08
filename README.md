@@ -1,2 +1,2 @@
-# Plantilla-planificacion
-Plan de proyecto para trabajos finales de posgrado en Sistemas Embebidos
+# Planificación
+Plan de proyecto para Desarrollo de Aplicación Hospitalaria
