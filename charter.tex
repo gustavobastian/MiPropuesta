@@ -2,12 +2,8 @@
 11pt, % The default document font size, options: 10pt, 11pt, 12pt
 %codirector, % Uncomment to add a codirector to the title page
 ]{charter} 
-
-
-
-
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Desarrollo de aplicacion Hospitalaria con MQTT} 
+\titulo{Desarrollo de aplicación Hospitalaria con MQTT} 
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
 %\posgrado{Carrera de Especialización en Sistemas Embebidos} 
@@ -17,10 +13,10 @@
 %\posgrado{Maestría en Internet de las cosas}
 
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
-\autor{Gustavo Bastian} 
+\autor{Ing. Gustavo Bastian} 
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Ericson Joseph Estupiñan Pineda}
+\director{Mg.Ing. Ericson Joseph Estupiñan Pineda}
 \pertenenciaDirector{Surix S.R.L} 
 % FIXME:NO IMPLEMENTADO EL CODIRECTOR ni su pertenencia
 %\codirector{John Doe} % para que aparezca en la portada se debe descomentar la opción codirector en el documentclass
@@ -68,8 +64,8 @@
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
-0      & Creación del documento                                 &\fechaInicioName \\ \hline
-%1      & Se completa hasta el punto 4 inclusive                 & dd/mm/aaaa \\ \hline
+0      & Creación del documento                                 & 31/10/2021 \\ \hline
+1      & Se completa hasta el punto 5 inclusive                 & 3/11/2021 \\ \hline
 %2      & Se completa hasta el punto 7 inclusive
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
@@ -92,7 +88,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'', consistirá esencialmente en {la implementación de un prototipo de una aplicación móvil para enfermeras, utilizando el protocolo MQTT}, y tendrá un presupuesto preliminar estimado de \textcolor{red}{600} hs de trabajo y \textcolor{red}{\$XXX}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
+Por medio de la presente se acuerda con el Ing. \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle''. Consistirá esencialmente en {la implementación de un prototipo de una aplicación móvil para la llamada, gestión de enfermeras y consulta enfermera-médico mediante la utilización protocolo MQTT}, y tendrá un presupuesto preliminar estimado de {600} hs de trabajo y {\$60000}, con fecha de inicio \fechaInicioName\hspace{1px} y fecha de presentación pública \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -118,9 +114,9 @@ Se adjunta a esta acta la planificación inicial.
 
 \begin{consigna} % El bloque "consigna" se usa para poner texto en rojo y dar una pequeña ayuda sobre cómo completar la sección
 {black}
-En la actualidad, el avance de la Internet de las Cosas(IOT) y la disminución de costos asociados a la tecnología hacen factible su incorporación a distintos campos de la vida cotidiana. Uno de esos campos, es el de infraestructuras hospitalarias inteligentes. 
+En la actualidad, el avance de la Internet de las Cosas(IOT) y la disminución de costos asociados a la tecnología hacen factible su incorporación a distintos campos de la vida cotidiana. Uno de esos campos es el de infraestructuras hospitalarias inteligentes. 
 
-Por otra parte, dentro de las múltiples opciones para realizar la comunicación entre los dispositivos IOT, el protocolo message queuing telemetry transport(en adelante MQTT) se ha probado como un protocolo confiable y ampliamente utilizado.
+Por otra parte, dentro de las múltiples opciones para realizar la comunicación entre los dispositivos IOT, el protocolo Message Queuing Telemetry Transport (en adelante MQTT) se ha probado como un protocolo confiable y ampliamente utilizado.
 
 Dentro del contexto, en este trabajo se desarrollará una aplicación multiplataforma que utilizará el protocolo MQTT para los distintos participantes  de la actividad hospitalaria. El proyecto es una necesidad de la empresa Surix S.R.L. y se lleva a cabo como parte de la carrera Especialización de Internet de las Cosas.
 
@@ -128,13 +124,13 @@ Surix S.R.L. es una firma que se dedica al desarrollo, fabricación y comerciali
 
 Surix S.R.L fabrica un sistema IP de llamado a enfermera que está basado en el protocolo SIP. Este consiste en un servidor central y terminales que se encuentran en las habitaciones del hospital. La aplicación principal se ejecuta en una pc o bien en una tablet y monitorea el estado de las habitaciones. 
  
-El objetivo del proyecto es realizar un sistema con las ventajas que provee el protocolo MQTT: posibilidad de agregar accesorios rápidamente con bajo costo de software, hardware e implementación. 
+El objetivo del proyecto es realizar un sistema con las ventajas que provee el protocolo MQTT, como es la posibilidad de agregar accesorios rápidamente con bajo costo de software, hardware e implementación. 
 
-MQTT es un protocolo open source liviano (hecho que permite implementarlo en dispositivos con pocos recursos y baja velocidad de transmisión) ampliamente utilizado en dispositivos IOT. Está basado en la pila TCP/IP, se implementa en la capa de aplicación y sus mensajes se transmiten como colas de publicación/subscripción. 
+MQTT es un protocolo open source liviano, hecho que permite implementarlo en dispositivos con pocos recursos y baja velocidad de transmisión, ampliamente utilizado en dispositivos IOT. Está basado en la pila TCP/IP, se implementa en la capa de aplicación y sus mensajes se transmiten como colas de publicación/subscripción. 
 
 El desafío de este proyecto consiste en la programación de un sistema que contenga un servidor o broker MQTT, una base de datos donde alojar información de reportes de habitaciones/enfermeras y datos relevantes al paciente(incluyendo temporizadores para suministro de ciertos medicamentos y/o control), una página web para configuración y una aplicación multiplataforma donde se realice la gestión de datos e interacción con los clientes. La aplicación será capaz de identificar la cama correspondiente(mediante lectura de símbolos QR) y de transmitir mensajes de voz en caso de ser necesario.
 
-La motivación que origina la realización del sistema es generar las bases para poder incorporar otros dispositivos inteligentes al sistema principal a bajo costo(por ejemplo, en un futuro se puede monitorear la temperatura de la habitación y saber si sufre un desperfecto el aire acondicionado, escuchar sonidos dentro de la sala en caso de que el paciente no pueda acceder al llamador, etc).
+La motivación que origina la realización del sistema es generar las bases para poder incorporar otros dispositivos inteligentes al sistema principal a bajo costo. Por ejemplo, en un futuro se puede monitorear la temperatura de la habitación y saber si sufre un desperfecto el aire acondicionado, escuchar sonidos dentro de la sala en caso de que el paciente no pueda acceder al llamador, etc.
 
 %El objetivo es que el lector en una o dos páginas entienda de qué se trata el 
 %proyecto y cuáles son sus desafíos, su motivación y su importancia.
@@ -156,14 +152,15 @@ La motivación que origina la realización del sistema es generar las bases para
 %
 %La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema} y una frase como la siguiente: ``En la Figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''. Luego recién más abajo de haber puesto esta frase, se pone la figura. La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
 
+\vspace{50px}
 
 El proyecto completo consta de :
 \begin{itemize}
-\item Broker
-\item Pantalla web de configuración
-\item Cliente médico
-\item Cliente enfermera
-\item Cliente sistema
+\item Broker.
+\item Pantalla web de configuración.
+\item Cliente médico.
+\item Cliente enfermera.
+\item Cliente sistema.
 \end{itemize}
 En la figura 1, se presenta un diagrama de interconexión entre los dispositivos.
 
@@ -173,19 +170,13 @@ En la figura 1, se presenta un diagrama de interconexión entre los dispositivos
 \begin{figure}[htpb]
 \centering 
 \includegraphics[width=.7\textwidth]{./Figuras/diag1.pdf}
-\caption{Diagrama en bloques del sistema}
+\caption{ Diagrama en bloques del sistema.}
 \label{fig:diagBloques}
 \end{figure}
 
-\vspace{25px}
+%\vspace{25px}
 
-El broker recibe mensajes(llamados ``eventos'') de distintos publicadores y los reenviará a los subscriptores que correspondan según una política asignada previamente.
-
-El cliente sistema poseera una base de datos con información relevante para los pacientes. La aplicación del cliente sistema puede monitorear el estado de las habitaciones.
-  
-El cliente enfermera solo recibe asignaciones o respuestas de un médico, y publica finalización o consulta(por medio de una aplicación).
-
-El cliente médico solo recibe consulta y publica respuestas(por medio de una aplicación).
+El broker recibe mensajes,llamados ``eventos'', de distintos publicadores y los reenvía a los subscriptores que correspondan según una política asignada previamente. El cliente sistema posee una base de datos con información relevante para los pacientes y tambien permite monitorear el estado de las habitaciones. Mientras que el cliente enfermera solo recibe asignaciones o respuestas de un médico, y publica finalización o consulta(por medio de una aplicación). Por último, el cliente médico solo recibe consulta y publica respuestas por medio de una aplicación.
 
 Con la aplicacion web se puede cargar la base de datos con informacion de enfermeras, pacientes y médicos.
 \vfill
@@ -220,7 +211,7 @@ Cliente       & \clientename      &\empclientename	& Propietario       	\\ \hlin
 %Impulsor      &                   &              	&        	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
 Colaboradores & --                   & --             	& --       	\\ \hline
-Orientador    & \supname	      & \pertesupname 	& Director Trabajo final \\ \hline
+Orientador    & \supname	      & \pertesupname 	& Director trabajo final \\ \hline
 %Equipo        & miembro1 \newline 
 %				miembro2          &              	&        	\\ \hline
 %Opositores    &                   &              	&        	\\ \hline
@@ -263,7 +254,6 @@ El propósito de este proyecto es desarrollar un sistema para gestión de enferm
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
-
 \begin{consigna}
 {black}
 %¿Qué se incluye y que no se incluye en este proyecto?
@@ -276,13 +266,13 @@ El propósito de este proyecto es desarrollar un sistema para gestión de enferm
 El presente proyecto incluye:
 
 \begin{itemize}
-	\item Confección de plan de trabajo. 
-	\item Investigación y estudio de protocolo MQTT, bases de datos SQL y NoSQL, programación de aplicaciones web y programación de aplicaciones multiplataforma.	
-	\item Desarrollo local del broker que registre en un log, horario y actividades realizadas. 
-	\item Desarrollo local de página web de configuración.
-	\item Desarrollo local de aplicacion cliente médico con envío/recepción de mensajes de audio/texto/alarmas.
-	\item Desarrollo local de aplicacion cliente enfermera con envío/recepción de mensajes de audio/texto/alarmas y escaneo de QR para identificar paciente. 
-	\item Desarrollo local de aplicacion cliente sistema 
+	\item Confección del plan de trabajo. 
+	\item Investigación y estudio del protocolo MQTT, bases de datos SQL y NoSQL, programación de aplicaciones web y programación de aplicaciones multiplataforma.	
+	\item Desarrollo local del broker que registre en un log actividades realizadas y su horario de realización. 
+	\item Desarrollo local de una página web de configuración.
+	\item Desarrollo local una de aplicacion cliente médico con envío/recepción de mensajes de audio/texto/alarmas.
+	\item Desarrollo local una de aplicacion cliente enfermera con envío/recepción de mensajes de audio/texto/alarmas y escaneo de QR para identificar paciente. 
+	\item Desarrollo local de una aplicacion cliente sistema 
 	\item Documentación de las aplicaciones desarrolladas.
 
 \end{itemize}
@@ -304,7 +294,7 @@ Para el desarrollo del presente proyecto se supone que:
 
 \begin{itemize}
 	\item Existe un llamador paciente. 
-	\item Las aplicaciones moviles usaran iOS,Android y Windows Phone como sistema operativo.
+	\item Las aplicaciones moviles usaran iOS y Android como sistema operativo.
 	\item La base de datos de los pacientes sólo puede ser afectada por medio de la aplicación sistema(el cliente médico sólo puede hacer consultas/modificaciones puntuales a una situación).
 \end{itemize}
 
@@ -322,8 +312,8 @@ Para el desarrollo del presente proyecto se supone que:
 \section{6. Requerimientos}
 \label{sec:requerimientos}
 
-\begin{consigna}{red}
-Los requerimientos deben numerarse y de ser posible estar agruparlos por afinidad, por ejemplo:
+\begin{consigna}{black}
+
 
 \begin{enumerate}
 	\item Requerimientos funcionales
@@ -332,21 +322,40 @@ Los requerimientos deben numerarse y de ser posible estar agruparlos por afinida
 			\item Cuando se recibe un evento del llamador paciente, el broker decidirá que enfermera recibe la notificación en su aplicación(politica de trabajo equitativo o por especialidad de la enfermera).
 			\item La aplicación enfermera debe poder descargar información relevante del paciente(medicamentos a suministrar, controles a realizar, contacto del médico a cargo del tratamiento,etc).
 			\item El broker debe registrar cualquier actividad realizada.
-			\item El usuario debe poder...
-			\item El usuario debe poder...
-			\item El usuario debe poder...
-			\item El usuario debe poder...
-			\item El usuario debe poder...
-			\item El usuario debe poder...
-			\item El usuario debe poder...
+			\item La aplicación móvil sistema debe mostrar las habitaciones sin atención,  según una tabla de prioridades(por ejemplo, si el mensaje es de algun dispositivo de urgencia-media), y en caso de igualdad de prioridades, la primera habitación que llamó.
+			\item El usuario médico y el usuario enfermera deben poder enviar mensajes de textos o sonido comprimido en 32kbps(mp3).
+			\item La página web de configuracion debe poder imprimir reportes de tareas realizadas filtrado por paciente, fecha, horario, enfermera.
+			\item La base de datos a utilizar debe poseer las siguientes tablas:
+			
+			*)Habitaciones
+						
+			*)Pacientes			
+			
+			*)Médicos
+			
+			*)Enfermeras			
+			
+			*)Eventos 
+
 		\end{enumerate}
 	\item Requerimientos de documentación
 		\begin{enumerate}
-			\item Requerimiento 1
-			\item Requerimiento 2 (prioridad menor)
+			\item Información de la base de datos: detalles de la misma y de API para acceder.
+			\item Diagramas UML de aplicación sistema, aplicación enfermera, aplicación médico y página web.
+			\item Información sobre el broker MQTT 
 		\end{enumerate}
-	\item Requerimiento de testing...
-	\item Requerimientos de la interfaz...
+	\item El sistema se debe testear con 10 habitaciones, 20 pacientes, 15 enfermeras y médicos simulados.
+	\item Requerimientos de la interfaz:
+	Aplicación Enfermera:
+	
+	
+	Aplicación Médico:	
+
+	Aplicación Sistema:		
+	
+	
+	Pantalla Web:		
+	
 	\item Requerimientos interoperabilidad...
 	\item etc...
 \end{enumerate}
