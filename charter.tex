@@ -23,7 +23,7 @@
 %\pertenenciaCoDirector{FIUBA}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
-\cliente{Sergio Starkloff}
+\cliente{Ing. Sergio Starkloff}
 \empresaCliente{Surix S.R.L}
 
 % Nombre y pertenencia de los jurados, se pueden usar el cualquier lugar del documento con el comando \jurunoname, \jurdosname y \jurtresname y \perteunoname, \pertedosname y \pertetresname.
@@ -112,8 +112,6 @@ Se adjunta a esta acta la planificación inicial.
 \label{sec:descripcion}
 
 
-\begin{consigna} % El bloque "consigna" se usa para poner texto en rojo y dar una pequeña ayuda sobre cómo completar la sección
-{black}
 En la actualidad, el avance de la Internet de las Cosas(IOT) y la disminución de costos asociados a la tecnología hacen factible su incorporación a distintos campos de la vida cotidiana. Uno de esos campos es el de infraestructuras hospitalarias inteligentes. 
 
 Por otra parte, dentro de las múltiples opciones para realizar la comunicación entre los dispositivos IOT, el protocolo Message Queuing Telemetry Transport (en adelante MQTT) se ha probado como un protocolo confiable y ampliamente utilizado.
@@ -183,14 +181,13 @@ Con la aplicacion web se puede cargar la base de datos con informacion de enferm
 
  
 %El tamaño de la tipografía en TODAS las figuras debe ser adecuado para que NO pase lo que ocurre acá, donde el lector debe esforzarse para poder leer el texto. Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama, preferentemente en la gama de colores pastel.
-\end{consigna}
+
 
 
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
 
-\begin{consigna}
-{black} 
+
 %Nota: (borrar esto y todas las consignas en color rojo antes de entregar este documento).
  
 %Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos.
@@ -237,24 +234,24 @@ Usuario final & Hospitales, personal de salud, administradores de sistemas      
 
 \end{itemize}
 
-\end{consigna}
+
 
 
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
-\begin{consigna}
-{black}
+
+
 El propósito de este proyecto es desarrollar un sistema para gestión de enfermeras basado en el protocolo MQTT compuesto por un broker, una web de configuración y una o varias aplicaciones, que agilice el desarrollo de funcionalidades futuras.
 %¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
 
 %Se recomienda que sea solo un párrafo que empiece diciendo ``El propósito de este proyecto es...''.
-\end{consigna}
+
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
-\begin{consigna}
+
 {black}
 %¿Qué se incluye y que no se incluye en este proyecto?
 
@@ -272,20 +269,22 @@ El presente proyecto incluye:
 	\item Desarrollo local de una página web de configuración.
 	\item Desarrollo local una de aplicacion cliente médico con envío/recepción de mensajes de audio/texto/alarmas.
 	\item Desarrollo local una de aplicacion cliente enfermera con envío/recepción de mensajes de audio/texto/alarmas y escaneo de QR para identificar paciente. 
-	\item Desarrollo local de una aplicacion cliente sistema 
+	\item Desarrollo local de una aplicacion cliente sistema que asigna enfermeras según una política asignada a pacientes adecuado a la indicación de un médico. Por ejemplo, todos los días a las 17 hs, medir la presión arterial del paciente "x", independientemente de la enferemera.
 	\item Documentación de las aplicaciones desarrolladas.
 
 \end{itemize}
 
-El presente proyecto no incluye:
+El presente proyecto NO incluye:
 \begin{itemize}
 	\item Manuales de las distintas aplicaciones desarrolladas.
 	\item Traducciones a idiomas extranjeros de las aplicaciones y/o de la página web.
 	\item Sistema llamador del paciente.
 	\item Análisis en profundidad de tráfico en la red.
 	\item Análisis en profundidad de Seguridad.
+	\item Contratación de base de datos remota.
+	\item Contratación e instalación de servidores remotos.
 \end{itemize}
-\end{consigna}
+
 
 
 \section{5. Supuestos del proyecto}
@@ -295,7 +294,10 @@ Para el desarrollo del presente proyecto se supone que:
 \begin{itemize}
 	\item Existe un llamador paciente. 
 	\item Las aplicaciones moviles usaran iOS y Android como sistema operativo.
-	\item La base de datos de los pacientes sólo puede ser afectada por medio de la aplicación sistema(el cliente médico sólo puede hacer consultas/modificaciones puntuales a una situación).
+	\item La base de datos de los pacientes sólo puede ser afectada por medio de la aplicación sistema(el cliente médico sólo puede hacer consultas/modificaciones puntuales a una situación).	
+	\item Se dispondrá al menos de una pc para instalación del servidor web, la base de datos, y del broker MQTT.
+	\item Se dispondrá de un router para la prueba funcional del sistema. 
+
 \end{itemize}
 
 %\begin{consigna}{red}
@@ -309,22 +311,25 @@ Para el desarrollo del presente proyecto se supone que:
 %Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
 %\end{consigna}
 
+
+
 \section{6. Requerimientos}
 \label{sec:requerimientos}
-
-\begin{consigna}{black}
-
+Los principales requerimientos relevados son los siguientes:
 
 \begin{enumerate}
-	\item Requerimientos funcionales
-		\begin{enumerate}
-			\item La aplicación enfermera debe de ser modular y permitir agregar funcionalidades(por ejemplo, substituir la lectura de código QR de la cama del paciente por otro método de identificación: nfc, bluetooth, ingreso manual, etc).
-			\item Cuando se recibe un evento del llamador paciente, el broker decidirá que enfermera recibe la notificación en su aplicación(politica de trabajo equitativo o por especialidad de la enfermera).
-			\item La aplicación enfermera debe poder descargar información relevante del paciente(medicamentos a suministrar, controles a realizar, contacto del médico a cargo del tratamiento,etc).
-			\item El broker debe registrar cualquier actividad realizada.
-			\item La aplicación móvil sistema debe mostrar las habitaciones sin atención,  según una tabla de prioridades(por ejemplo, si el mensaje es de algun dispositivo de urgencia-media), y en caso de igualdad de prioridades, la primera habitación que llamó.
-			\item El usuario médico y el usuario enfermera deben poder enviar mensajes de textos o sonido comprimido en 32kbps(mp3).
-			\item La página web de configuracion debe poder imprimir reportes de tareas realizadas filtrado por paciente, fecha, horario, enfermera.
+	\item Requerimientos funcionales Servidor
+			\begin{enumerate}
+			\item El servidor debe tener instalado ECLIPSE MOSQUITTO como broker MQTT.
+			\item El servidor debe tener funciones para interactuar con una aplicación Web, para consultas y envío de datos hacia dispositivos clientes.
+			\item El servidor debe tener funciones para interactuar con la base de datos.
+			\item El servidor debe proteger información del sistema.
+			
+			\end{enumerate}
+	\item Requerimientos funcionales Base de datos
+		\begin{enumerate}		
+			\item El sistema debe poseer una base de datos relacional.
+			\item La base de datos debe poseer cargados datos por default.
 			\item La base de datos a utilizar debe poseer las siguientes tablas:
 			
 			*)Habitaciones
@@ -337,43 +342,40 @@ Para el desarrollo del presente proyecto se supone que:
 			
 			*)Eventos 
 
+		\end{enumerate}	
+	\item Requerimientos funcionales aplicación web de configuración
+		\begin{enumerate}	
+		\item La aplicación web debe ser cliente del broker MQTT.
+		\item La aplicación web debe poseer funciones de consulta o modificación de la base de datos.
+		\item La aplicación web debe ser permitir visualización de estadisticas de pacientes o enfermeras, etc.
+		\item La aplicación debe de ser responsive.
+		\item La aplicación debe contener acceso con usuario y contraseña para cada usuario.
+		\end{enumerate}			
+	\item Requerimientos funcionales aplicación enfermera
+		\begin{enumerate}
+			\item La aplicación enfermera debe tener 3 modos de uso :usuario médico, usuario enfermera, usuario sistema.
+			\item Al logearse el usuario (y contrastarse con la base de datos del sistema) se activa el modo correspondiente.
+			\item La aplicación en modo enfermera debe permitir leer codigo QR.			
+			\item La aplicación en modo enfermera debe poder descargar información relevante del paciente(medicamentos a suministrar, controles a realizar, contacto del médico a cargo del tratamiento,etc).	
+			\item La aplicación en modo sistema debe mostrar las habitaciones sin atención,  según una tabla de prioridades(por ejemplo, si el mensaje es de algun dispositivo de urgencia-media), y en caso de igualdad de prioridades, la primera habitación que llamó.
+			\item El modo usuario médico y el modo usuario enfermera deben poder enviar mensajes de textos o sonido comprimido en 32kbps(mp3).
+			
 		\end{enumerate}
 	\item Requerimientos de documentación
 		\begin{enumerate}
 			\item Información de la base de datos: detalles de la misma y de API para acceder.
 			\item Diagramas UML de aplicación sistema, aplicación enfermera, aplicación médico y página web.
-			\item Información sobre el broker MQTT 
+			\item Información relevante para el uso del sistema.
 		\end{enumerate}
-	\item El sistema se debe testear con 10 habitaciones, 20 pacientes, 15 enfermeras y médicos simulados.
-	\item Requerimientos de la interfaz:
-	Aplicación Enfermera:
+	\item Requerimientos de integración de sistema:	
+			\begin{enumerate}
+			\item El sistema debe integrar el funcionamiento del servidor con base de datos y aplicación web.
+			\item La aplicación web debe poder cargar la base de dato del sistema.
+			\end{enumerate}	
 	
-	
-	Aplicación Médico:	
 
-	Aplicación Sistema:		
-	
-	
-	Pantalla Web:		
-	
-	\item Requerimientos interoperabilidad...
-	\item etc...
 \end{enumerate}
 
-Leyendo los requerimientos se debe poder interpretar cómo será el proyecto y su funcionalidad.
-
-Indicar claramente cuál es la prioridad entre los distintos requerimientos y si hay requerimientos opcionales. 
-
-No olvidarse de que los requerimientos incluyen a las regulaciones y normas vigentes!!!
-
-Y al escribirlos seguir las siguientes reglas:
-\begin{itemize}
-	\item Ser breve y conciso (nadie lee cosas largas). 
-	\item Ser específico: no dejar lugar a confusiones.
-	\item Expresar los requerimientos en términos que sean cuantificables y medibles.
-\end{itemize}
-
-\end{consigna}
 
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
@@ -389,20 +391,21 @@ Se debe indicar explícitamente el criterio para calcular los \textit{story poin
 \section{8. Entregables principales del proyecto}
 \label{sec:entregables}
 
-\begin{consigna}{red}
 
-Los entregables del proyecto son (ejemplo):
+
+Los entregables del proyecto son :
 
 \begin{itemize}
-	\item Manual de uso
-	\item Diagrama de circuitos esquemáticos
-	\item Código fuente del firmware
-	\item Diagrama de instalación
-	\item Informe final
-	\item etc...
+	\item Plan de Proyecto del Trabajo Final y Memoria Técnica
+	\item Servidor MQTT 
+	\item Base de datos configurada y con datos ficticios cargados
+	\item Aplicación Web responsive
+	\item Aplicaciones sistema, médico y enfermera
+	\item Integración de distintos sistemas.
+	\item Código fuente de todo lo desarrollado.
 \end{itemize}
 
-\end{consigna}
+
 
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
