@@ -353,7 +353,7 @@ Los principales requerimientos relevados son los siguientes:
 		\end{enumerate}			
 	\item Requerimientos funcionales aplicación enfermera
 		\begin{enumerate}
-			\item La aplicación enfermera debe tener 3 modos de uso :usuario médico, usuario enfermera, usuario sistema.
+			\item La aplicación enfermera debe tener 3 modos de uso: usuario médico, usuario enfermera, usuario sistema.
 			\item Al logearse el usuario (y contrastarse con la base de datos del sistema) se activa el modo correspondiente.
 			\item La aplicación en modo enfermera debe permitir leer codigo QR.			
 			\item La aplicación en modo enfermera debe poder descargar información relevante del paciente(medicamentos a suministrar, controles a realizar, contacto del médico a cargo del tratamiento,etc).	
@@ -410,37 +410,66 @@ Los entregables del proyecto son :
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
 
-\begin{consigna}{red}
-El WBS debe tener relación directa o indirecta con los requerimientos.  Son todas las actividades que se harán en el proyecto para dar cumplimiento a los requerimientos. Se recomienda mostrar el WBS mediante una lista indexada:
+
+Desglose del trabajo:
 
 \begin{enumerate}
-\item Grupo de tareas 1
+\item Investigación preliminar( 60 hs)
 	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
+	\item Investigar funcionamiento Broker Mosquitto (10 hs)
+	\item Investigar base de datos Relacionales(10 hs)
+	\item Investigar bibliotecas graficas para implementar pagina web(20 hs)
+	\item Investigar bibliotecas graficas para implementar aplicación movile(20 hs)
 	\end{enumerate}
-\item Grupo de tareas 2
+\item Implementación Servidor(110 hs)
 	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
+	\item Instalación y configuración de NodeJs como motor de ejecución de broker MQTT.(30 hs)
+	\item Instalación de Broker MQTT (40 hs)
+	\item Programación de funciones de consulta para aplicación web /movile (40 hs)
+
 	\end{enumerate}
-\item Grupo de tareas 3
+\item Implementación de la base de datos(110 horas)
 	\begin{enumerate}
-	\item Tarea 1 (tantas hs)
-	\item Tarea 2 (tantas hs)
-	\item Tarea 3 (tantas hs)
-	\item Tarea 4 (tantas hs)
-	\item Tarea 5 (tantas hs)
+	\item Instalación de base de datos(40 horas)
+	\item Configuración de parametros de seguridad y datos(30 horas)
+	\item Creación y carga de datos ficticios para prueba(40 horas)
+
 	\end{enumerate}
+\item Implementación de página Web(190 horas)
+	\begin{enumerate}
+	\item Programación de funciones MQTT como cliente del broker(50 hs)
+	\item Prueba de envío y recepción de datos al broker(10 hs)
+	\item Programación de funciones de consulta de datos a la base de datos(40 hs)
+	\item Programación de funciones de carga de datos a la base de datos(40 hs)
+	\item Programación de logica y acceso de seguridad de usuarios(40 hs)
+	\item Prueba de acceso de usuarios(10 hs)
+	\end{enumerate}
+	
+\item Implementación de Aplicación enfermera(160 horas)
+	\begin{enumerate}
+	\item Programación de interface de usuario de logueo(4 hs)
+	\item Programación de logica y acceso de seguridad de usuarios(20 hs)
+	\item Programación de interface de usuario modo enfermera(10 hs)
+	\item Programación de interface de usuario modo médico(10 hs)
+	\item Programación de interface de usuario modo sistema(10 hs)
+	\item Prueba de envío y recepción de datos modo enfermera al broker(10 hs)
+	\item Prueba de envío y recepción de datos modo médico al broker(10 hs)
+	\item Programación de funciones de consulta de datos a la base de datos modo enfermera(10 hs)
+	\item Prueba de envío y recepción de datos modo sistema al broker(10 hs)
+	\item Prueba de envío y recepción de datos entre clientes modo enfermera y cliente modo médico (20 hs)
+	\item Programación y prueba de lectura de QR usuario modo enfermera(6 hs)
+	\item Programación y prueba de captura/compresión/envío de audio usuario modo enfermera(30 hs)
+	\item Prueba de acceso de usuarios(10 hs)
+	\end{enumerate}
+\item Testeo de sistema(10 hs)
+	\begin{enumerate}	
+	\item Prueba del funciomiento correcto con 2 enfermeras 2 medicos y 3 llamadores  (10 hs)
+	\end{enumerate}	
 \end{enumerate}
 
-Cantidad total de horas: (tantas hs)
+Cantidad total de horas: (600 hs)
 
-Se recomienda que no haya ninguna tarea que lleve más de 40 hs. 
 
-\end{consigna}
 
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
