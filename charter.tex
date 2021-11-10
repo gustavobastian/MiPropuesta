@@ -66,7 +66,8 @@
 Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios realizados} & Fecha      \\ \hline
 0      & Creación del documento                                 & 31/10/2021 \\ \hline
 1      & Se completa hasta el punto 5 inclusive                 & 3/11/2021 \\ \hline
-%2      & Se completa hasta el punto 7 inclusive
+2      & Se completa hasta el punto 9 inclusive
+& 11/11/2021 \\ \hline
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
 %		  Así                                                    & dd/mm/aaaa \\ \hline
@@ -167,7 +168,7 @@ En la figura 1, se presenta un diagrama de interconexión entre los dispositivos
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.7\textwidth]{./Figuras/diag1.pdf}
+\includegraphics[width=.7\textwidth]{./Figuras/diag2.pdf}
 \caption{ Diagrama en bloques del sistema.}
 \label{fig:diagBloques}
 \end{figure}
@@ -269,7 +270,7 @@ El presente proyecto incluye:
 	\item Desarrollo local de una página web de configuración.
 	\item Desarrollo local una de aplicacion cliente médico con envío/recepción de mensajes de audio/texto/alarmas.
 	\item Desarrollo local una de aplicacion cliente enfermera con envío/recepción de mensajes de audio/texto/alarmas y escaneo de QR para identificar paciente. 
-	\item Desarrollo local de una aplicacion cliente sistema que asigna enfermeras según una política asignada a pacientes adecuado a la indicación de un médico. Por ejemplo, todos los días a las 17 hs, medir la presión arterial del paciente "x", independientemente de la enferemera.
+	\item Desarrollo local de una aplicacion cliente sistema que asigna enfermeras a pacientes adecuado a la indicación de un médico. Por ejemplo, todos los días a las 17 hs, medir la presión arterial del paciente "x", independientemente de la enferemera. Esta aplicación permite monitorizar el estado de las habitaciones.
 	\item Documentación de las aplicaciones desarrolladas.
 
 \end{itemize}
@@ -329,7 +330,7 @@ Los principales requerimientos relevados son los siguientes:
 	\item Requerimientos funcionales Base de datos
 		\begin{enumerate}		
 			\item El sistema debe poseer una base de datos relacional.
-			\item La base de datos debe poseer cargados datos por default.
+			\item La base de datos debe poseer datos cargados por default.
 			\item La base de datos a utilizar debe poseer las siguientes tablas:
 			
 			*)Habitaciones
@@ -349,11 +350,11 @@ Los principales requerimientos relevados son los siguientes:
 		\item La aplicación web debe poseer funciones de consulta o modificación de la base de datos.
 		\item La aplicación web debe ser permitir visualización de estadisticas de pacientes o enfermeras, etc.
 		\item La aplicación debe de ser responsive.
-		\item La aplicación debe contener acceso con usuario y contraseña para cada usuario.
+		\item La aplicación debe contener acceso con usuario y contraseña para cada persona.
 		\end{enumerate}			
 	\item Requerimientos funcionales aplicación enfermera
 		\begin{enumerate}
-			\item La aplicación enfermera debe tener 3 modos de uso: usuario médico, usuario enfermera, usuario sistema.
+			\item La aplicación enfermera debe tener 3 modos de uso: usuario médico, usuario enfermera y usuario sistema.
 			\item Al logearse el usuario (y contrastarse con la base de datos del sistema) se activa el modo correspondiente.
 			\item La aplicación en modo enfermera debe permitir leer codigo QR.			
 			\item La aplicación en modo enfermera debe poder descargar información relevante del paciente(medicamentos a suministrar, controles a realizar, contacto del médico a cargo del tratamiento,etc).	
@@ -380,13 +381,145 @@ Los principales requerimientos relevados son los siguientes:
 \section{7. Historias de usuarios (\textit{Product backlog})}
 \label{sec:backlog}
 
-\begin{consigna}{red}
-Descripción: En esta sección se deben incluir las historias de usuarios y su ponderación (\textit{history points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
+%\begin{consigna}{red}
+%Descripción: En esta sección se deben incluir las %historias de usuarios y su ponderación (\textit{history %points}). Recordar que las historias de usuarios son descripciones cortas y simples de una característica contada desde la perspectiva de la persona que desea la nueva capacidad, generalmente un usuario o cliente del sistema. La ponderación es un número entero que representa el tamaño de la historia comparada con otras historias de similar tipo.
 
-El formato propuesto es: "como [rol] quiero [tal cosa] para [tal otra cosa]."
+%El formato propuesto es: "como [rol] quiero [tal cosa] para [tal otra cosa]."
 
-Se debe indicar explícitamente el criterio para calcular los \textit{story points} de cada historia
-\end{consigna}
+%Se debe indicar explícitamente el criterio para calcular los \textit{story points} de cada historia
+%\end{consigna}
+\begin{itemize}
+\item Como enfermero quiero que la aplicación me notifique si hay un pedido de una habitación para ir a atenderla.
+
+Dificultad: baja(1) $\Rightarrow$ la notificación es solo un mensaje, y la existen varias formas de mostrarlo al usuario.
+
+Complejidad: baja(1) $\Rightarrow$ tarea no sofisticada.
+
+Riesgo: medio(3) $\Rightarrow$ puede haber situaciones de permisos que se desconocen al día de hoy.
+
+Story Point: 5
+
+\item Como enfermero quiero que la aplicación permita que notifique que finalicé la tarea para poder recibir otro pedido.
+
+Dificultad: baja(1) $\Rightarrow$ la notificación es solo un mensaje.
+
+Complejidad: baja(1)$\Rightarrow$ tarea no sofisticada desde el lado del enfermero.
+
+Riesgo: medio(3) $\Rightarrow$ puede haber situaciones de permisos que se desconocen al día de hoy.
+
+Story Point: 5
+
+\item Como enfermero quiero que la aplicación permita que notifique que estoy atendiendo para que no tener varios pedidos pendiente.
+
+Dificultad: media(3) $\Rightarrow$ el sistema gestor debe encontrar un mecanismo de monitoreo.
+
+Complejidad: media(3) $\Rightarrow$ tarea no sofisticada desde el lado del enfermero, se resuelve desde el servidor.
+
+Riesgo: bajo(1) $\Rightarrow$ es una tarea normal en sistemas statefull.
+
+Story Point: 7
+
+\item Como enfermero quiero que la aplicación permita que consulte a un médico para evitar cometer errores al tener dudas.
+
+Dificultad: alta(5) $\Rightarrow$ se debe chequear la disponibilidad del médico de atenderlo, derivarlo a otro en caso contrario. Muchas opciones de mensajes y muchos test.
+
+Complejidad: alta(5) $\Rightarrow$ Involucra prácticamente a todo el sistema.
+
+Riesgo: alto(5) $\Rightarrow$ es la tarea principal del sistema y su complejidad puede escalar.
+
+Story Point: 15
+
+
+\item Como enfermero quiero que la aplicación permita obtener información del paciente para entender el estado de la situación.
+
+Dificultad: media(3) $\Rightarrow$ se debe interconectar el cliente enfermera con la base de datos del servidor. Se debe presentar la información de manera clara en dispositivos con pantallas no muy amplias.
+
+Complejidad: media(3) $\Rightarrow$  solo involucra al cliente enfermera y la base de datos.
+
+Riesgo: bajo(1) $\Rightarrow$ el único riesgo que puede tener la tarea es la forma en que se presenta en el dispositivo, si la tarea contiene muchas líneas de texto puede que sea difícil de leer en un dispositivo móvil.
+
+
+\item Como enfermero quiero que la aplicación permita avisar que mi jornada terminó para no recibir más notificaciones.
+
+Dificultad: media(3)$\Rightarrow$ el sistema gestor debe encontrar un mecanismo de monitoreo.
+
+Complejidad: media(3) $\Rightarrow$ tarea no sofisticada desde el lado del enfermero, se resuelve desde el servidor.
+
+Riesgo: bajo(1)$\Rightarrow$ es una tarea normal en sistemas que mantienen un log de estado.
+
+Story Point: 7
+
+
+\item Como enfermero quiero que la aplicación permita que notifique que necesito ayuda de otro enfermero para atender el paciente.
+
+
+Dificultad: alta(5) $\Rightarrow$ se debe chequear la disponibilidad de otro enfermero para atenderlo, derivarlo a otro en caso contrario. Muchas opciones de mensajes y muchos test.
+
+Complejidad: alta(5) $\Rightarrow$ Involucra prácticamente a todo el sistema.
+
+Riesgo: alto(5) $\Rightarrow$ su complejidad puede escalar
+
+Story Point: 15
+
+\item Como médico quiero que la aplicación posea un mecanismo sencillo para responder dudas de la enfermera.
+
+Dificultad: baja(1) $\Rightarrow$ Se reutiliza el sistema del modo enfermera.
+
+Complejidad: baja(1) $\Rightarrow$ Se reutiliza el sistema del modo enfermera.
+
+Riesgo: bajo(1) $\Rightarrow$ Se reutiliza el sistema del modo enfermera.
+
+Story Point: 3
+
+
+\item Como médico quiero que la aplicación permita acceder a la información del paciente que en caso de consulta de un enfermero.
+
+Dificultad: baja(1) $\Rightarrow$ Se reutiliza el sistema del modo enfermera.
+
+Complejidad: baja(1) $\Rightarrow$ Se reutiliza el sistema del modo enfermera.
+
+Riesgo: bajo(1) $\Rightarrow$ Se reutiliza el sistema del modo enfermera.
+
+
+Story Point: 3
+
+
+\item Como usuario sistema quiero que la aplicación me permita asignar tareas temporizadas para atender rutinas preestablecidas por el médico.
+
+Dificultad: baja(1) $\Rightarrow$  tarea analoga a realizar un calendario con notificaciones. 
+
+Complejidad: media(3) $\Rightarrow$ Se implementa en el lado servidor...multiples menues en la versión móvil(puede hacerse desde la página web también).
+
+Riesgo: medio(3) $\Rightarrow$ Puede cambiar la forma de la presentación durante el desarrollo.
+
+
+Story Point: 7
+
+
+\item Como sistema quiero que la aplicación permita obtener datos estadísticos de cada enfermero para poder reportar.
+
+
+Dificultad: media(3) $\Rightarrow$ Se gestiona desde la pagina web.
+
+Complejidad: media(3) $\Rightarrow$ Se implementa en el lado servidor.
+
+Riesgo: medio(3) $\Rightarrow$ Puede cambiar la forma de presentación durante el desarrollo.
+
+
+Story Point: 9
+
+\item Como sistema quiero que la aplicación móvil me muestre el estado de las habitaciones.
+
+Dificultad: baja(1) $\Rightarrow$ Simplemente se almacenan los estados en la app o en el servidor.
+
+Complejidad: baja(1) $\Rightarrow$ La implementación es bastante sencilla.
+
+Riesgo: baja(1) $\Rightarrow$ Puede cambiar la forma de presentación durante el desarrollo.
+
+Story Point: 3
+
+
+\end{itemize}
 
 \section{8. Entregables principales del proyecto}
 \label{sec:entregables}
@@ -400,7 +533,7 @@ Los entregables del proyecto son :
 	\item Servidor MQTT 
 	\item Base de datos configurada y con datos ficticios cargados
 	\item Aplicación Web responsive
-	\item Aplicaciones sistema, médico y enfermera
+	\item Aplicación enfermera(con los 3 modos de funcionamiento)
 	\item Integración de distintos sistemas.
 	\item Código fuente de todo lo desarrollado.
 \end{itemize}
@@ -445,10 +578,10 @@ Desglose del trabajo:
 	\item Prueba de acceso de usuarios(10 hs)
 	\end{enumerate}
 	
-\item Implementación de Aplicación enfermera(160 horas)
+\item Implementación de Aplicación enfermera(140 horas)
 	\begin{enumerate}
 	\item Programación de interface de usuario de logueo(4 hs)
-	\item Programación de logica y acceso de seguridad de usuarios(20 hs)
+	\item Programación de lógica y acceso de seguridad de usuarios(10 hs)
 	\item Programación de interface de usuario modo enfermera(10 hs)
 	\item Programación de interface de usuario modo médico(10 hs)
 	\item Programación de interface de usuario modo sistema(10 hs)
@@ -456,18 +589,18 @@ Desglose del trabajo:
 	\item Prueba de envío y recepción de datos modo médico al broker(10 hs)
 	\item Programación de funciones de consulta de datos a la base de datos modo enfermera(10 hs)
 	\item Prueba de envío y recepción de datos modo sistema al broker(10 hs)
-	\item Prueba de envío y recepción de datos entre clientes modo enfermera y cliente modo médico (20 hs)
+	\item Prueba de envío y recepción de datos entre clientes modo enfermera y cliente modo médico (10 hs)
 	\item Programación y prueba de lectura de QR usuario modo enfermera(6 hs)
 	\item Programación y prueba de captura/compresión/envío de audio usuario modo enfermera(30 hs)
 	\item Prueba de acceso de usuarios(10 hs)
 	\end{enumerate}
 \item Testeo de sistema(10 hs)
 	\begin{enumerate}	
-	\item Prueba del funciomiento correcto con 2 enfermeras 2 medicos y 3 llamadores  (10 hs)
+	\item Prueba del funciomiento correcto con 2 enfermeras 2 médicos y 3 llamadores  (10 hs)
 	\end{enumerate}	
 \end{enumerate}
 
-Cantidad total de horas: (600 hs)
+Cantidad total de horas: (620 hs)
 
 
 
