@@ -99,7 +99,7 @@ Se adjunta a esta acta la planificación inicial.
 \begin{table}[ht]
 \centering
 \begin{tabular}{ccc}
-\begin{tabular}[c]{@{}c@{}}Ariel Lutenberg \\ Director posgrado FIUBA\end{tabular} & \hspace{2cm} & \begin{tabular}[c]{@{}c@{}}\clientename \\ \empclientename \end{tabular} \vspace{2.5cm} \\ 
+\begin{tabular}[c]{@{}c@{}}Dr. Ariel Lutenberg \\ Director posgrado FIUBA\end{tabular} & \hspace{2cm} & \begin{tabular}[c]{@{}c@{}}\clientename \\ \empclientename \end{tabular} \vspace{2.5cm} \\ 
 \multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \supname \\ Director del Trabajo Final\end{tabular}} \vspace{2.5cm} \\
 %\begin{tabular}[c]{@{}c@{}}\jurunoname \\ Jurado del Trabajo Final\end{tabular}     &  & \begin{tabular}[c]{@{}c@{}}\jurdosname\\ Jurado del Trabajo Final\end{tabular}  \vspace{2.5cm}  \\
 %\multicolumn{3}{c}{\begin{tabular}[c]{@{}c@{}} \jurtresname\\ Jurado del Trabajo Final\end{tabular}} \vspace{.5cm}                                                                     
@@ -177,7 +177,7 @@ En la figura 1, se presenta un diagrama de interconexión entre los dispositivos
 
 El broker recibe mensajes,llamados ``eventos'', de distintos publicadores y los reenvía a los subscriptores que correspondan según una política asignada previamente. El cliente sistema posee una base de datos con información relevante para los pacientes y tambien permite monitorear el estado de las habitaciones. Mientras que el cliente enfermera solo recibe asignaciones o respuestas de un médico, y publica finalización o consulta(por medio de una aplicación). Por último, el cliente médico solo recibe consulta y publica respuestas por medio de una aplicación.
 
-Con la aplicacion web se puede cargar la base de datos con informacion de enfermeras, pacientes y médicos.
+Con la aplicación web se puede cargar la base de datos con información de enfermeras, pacientes y médicos.
 \vfill
 
  
@@ -265,11 +265,11 @@ El presente proyecto incluye:
 \begin{itemize}
 	\item Confección del plan de trabajo. 
 	\item Investigación y estudio del protocolo MQTT, bases de datos SQL y NoSQL, programación de aplicaciones web y programación de aplicaciones multiplataforma.	
-	\item Desarrollo local del broker que registre en un log actividades realizadas y su horario de realización. 
+	\item Desarrollo local del broker que registre en un log las actividades realizadas y su horario de realización. 
 	\item Desarrollo local de una página web de configuración.
-	\item Desarrollo local una de aplicacion cliente médico con envío/recepción de mensajes de audio/texto/alarmas.
-	\item Desarrollo local una de aplicacion cliente enfermera con envío/recepción de mensajes de audio/texto/alarmas y escaneo de QR para identificar paciente. 
-	\item Desarrollo local de una aplicacion cliente sistema que asigna enfermeras a pacientes adecuado a la indicación de un médico. Por ejemplo, todos los días a las 17 hs, medir la presión arterial del paciente "x", independientemente de la enferemera. Esta aplicación permite monitorizar el estado de las habitaciones.
+	\item Desarrollo local de una aplicación cliente médico con envío/recepción de mensajes de audio/texto/alarmas.
+	\item Desarrollo local de una aplicación cliente enfermera con envío/recepción de mensajes de audio/texto/alarmas y escaneo de QR para identificar paciente. 
+	\item Desarrollo local de una aplicación cliente sistema que asigna enfermeras a pacientes adecuado a la indicación de un médico. Por ejemplo, todos los días a las 17 hs, medir la presión arterial del paciente ``x", independientemente de la enferemera. Esta aplicación permite monitorizar el estado de las habitaciones.
 	\item Documentación de las aplicaciones desarrolladas.
 
 \end{itemize}
@@ -347,7 +347,7 @@ Los principales requerimientos relevados son los siguientes:
 		\begin{enumerate}	
 		\item La aplicación web debe ser cliente del broker MQTT.
 		\item La aplicación web debe poseer funciones de consulta o modificación de la base de datos.
-		\item La aplicación web debe ser permitir visualización de estadisticas de pacientes o enfermeras, etc.
+		\item La aplicación web debe ser permitir visualización de estadísticas de pacientes o enfermeras, etc.
 		\item La aplicación debe de ser responsive.
 		\item La aplicación debe contener acceso con usuario y contraseña para cada persona.
 		\end{enumerate}			
@@ -369,8 +369,8 @@ Los principales requerimientos relevados son los siguientes:
 		\end{enumerate}
 	\item Requerimientos de integración de sistema:	
 			\begin{enumerate}
-			\item El sistema debe integrar el funcionamiento del servidor con base de datos y aplicación web.
-			\item La aplicación web debe poder cargar la base de dato del sistema.
+			\item El sistema debe integrar el funcionamiento del servidor con base de datos , aplicación web y aplicaciones moviles.
+			
 			\end{enumerate}	
 	
 
@@ -412,9 +412,9 @@ Story Point: 5
 
 Dificultad: media(3) $\Rightarrow$ el sistema gestor debe encontrar un mecanismo de monitoreo.
 
-Complejidad: media(3) $\Rightarrow$ tarea no sofisticada desde el lado del enfermero, se resuelve desde el servidor.
+Complejidad: media(3) $\Rightarrow$ tarea se resuelve desde el servidor.
 
-Riesgo: bajo(1) $\Rightarrow$ es una tarea normal en sistemas statefull.
+Riesgo: bajo(1) $\Rightarrow$ es una tarea normal en sistemas que mantienen información sobre su estado.
 
 Story Point: 7
 
@@ -444,7 +444,7 @@ Dificultad: media(3)$\Rightarrow$ el sistema gestor debe encontrar un mecanismo 
 
 Complejidad: media(3) $\Rightarrow$ tarea no sofisticada desde el lado del enfermero, se resuelve desde el servidor.
 
-Riesgo: bajo(1)$\Rightarrow$ es una tarea normal en sistemas que mantienen un log de estado.
+Riesgo: bajo(1)$\Rightarrow$ es una tarea normal en sistemas que mantienen información de estado.
 
 Story Point: 7
 
@@ -452,7 +452,7 @@ Story Point: 7
 \item Como enfermero quiero que la aplicación permita que notifique que necesito ayuda de otro enfermero para atender el paciente.
 
 
-Dificultad: alta(5) $\Rightarrow$ se debe chequear la disponibilidad de otro enfermero para atenderlo, derivarlo a otro en caso contrario. Muchas opciones de mensajes y muchos test.
+Dificultad: alta(5) $\Rightarrow$ se debe chequear la disponibilidad de otro enfermero para ayudarlo, derivarlo a otro en caso contrario. Muchas opciones de mensajes y muchos test.
 
 Complejidad: alta(5) $\Rightarrow$ Involucra prácticamente a todo el sistema.
 
@@ -546,60 +546,60 @@ Los entregables del proyecto son :
 Desglose del trabajo:
 
 \begin{enumerate}
-\item Investigación preliminar( 60 hs)
+\item Investigación preliminar(60 hs).
 	\begin{enumerate}
-	\item Investigar funcionamiento Broker Mosquitto (10 hs)
-	\item Investigar base de datos Relacionales(10 hs)
-	\item Investigar bibliotecas graficas para implementar pagina web(20 hs)
-	\item Investigar bibliotecas graficas para implementar aplicación movile(20 hs)
+	\item Investigar funcionamiento Broker Mosquitto(10 hs).
+	\item Investigar base de datos Relacionales(10 hs).
+	\item Investigar bibliotecas graficas para implementar pagina web(20 hs).
+	\item Investigar bibliotecas graficas para implementar aplicación movile(20 hs).
 	\end{enumerate}
-\item Implementación Servidor(110 hs)
+\item Implementación Servidor(110 hs).
 	\begin{enumerate}
-	\item Instalación y configuración de NodeJs como motor de ejecución de broker MQTT.(30 hs)
-	\item Instalación de Broker MQTT (40 hs)
-	\item Programación de funciones de consulta para aplicación web /movile (40 hs)
+	\item Instalación y configuración de NodeJs como motor de ejecución de broker MQTT(30 hs).
+	\item Instalación de Broker MQTT (40 hs).
+	\item Programación de funciones de consulta para aplicación web /movile (40 hs).
 
 	\end{enumerate}
-\item Implementación de la base de datos(110 horas)
+\item Implementación de la base de datos(110 horas).
 	\begin{enumerate}
-	\item Instalación de base de datos(40 horas)
-	\item Configuración de parametros de seguridad y datos(30 horas)
-	\item Creación y carga de datos ficticios para prueba(40 horas)
+	\item Instalación de base de datos(40 horas).
+	\item Configuración de parametros de seguridad y datos(30 horas).
+	\item Creación y carga de datos ficticios para prueba(40 horas).
 
 	\end{enumerate}
-\item Implementación de página Web(190 horas)
+\item Implementación de página Web(190 horas).
 	\begin{enumerate}
-	\item Programación de funciones MQTT como cliente del broker(50 hs)
-	\item Prueba de envío y recepción de datos al broker(10 hs)
-	\item Programación de funciones de consulta de datos a la base de datos(40 hs)
-	\item Programación de funciones de carga de datos a la base de datos(40 hs)
-	\item Programación de logica y acceso de seguridad de usuarios(40 hs)
-	\item Prueba de acceso de usuarios(10 hs)
+	\item Programación de funciones MQTT como cliente del broker(50 hs).
+	\item Prueba de envío y recepción de datos al broker(10 hs).
+	\item Programación de funciones de consulta de datos a la base de datos(40 hs).
+	\item Programación de funciones de carga de datos a la base de datos(40 hs).
+	\item Programación de lógica de acceso y seguridad de usuarios(40 hs).
+	\item Prueba de acceso de usuarios(10 hs).
 	\end{enumerate}
 	
-\item Implementación de Aplicación enfermera(140 horas)
+\item Implementación de Aplicación enfermera(140 horas).
 	\begin{enumerate}
-	\item Programación de interface de usuario de logueo(4 hs)
-	\item Programación de lógica y acceso de seguridad de usuarios(10 hs)
-	\item Programación de interface de usuario modo enfermera(10 hs)
-	\item Programación de interface de usuario modo médico(10 hs)
-	\item Programación de interface de usuario modo sistema(10 hs)
-	\item Prueba de envío y recepción de datos modo enfermera al broker(10 hs)
-	\item Prueba de envío y recepción de datos modo médico al broker(10 hs)
-	\item Programación de funciones de consulta de datos a la base de datos modo enfermera(10 hs)
-	\item Prueba de envío y recepción de datos modo sistema al broker(10 hs)
-	\item Prueba de envío y recepción de datos entre clientes modo enfermera y cliente modo médico (10 hs)
-	\item Programación y prueba de lectura de QR usuario modo enfermera(6 hs)
-	\item Programación y prueba de captura/compresión/envío de audio usuario modo enfermera(30 hs)
-	\item Prueba de acceso de usuarios(10 hs)
+	\item Programación de interface de usuario de logueo(4 hs).
+	\item Programación de lógica y acceso de seguridad de usuarios(10 hs).
+	\item Programación de interface de usuario modo enfermera(10 hs).
+	\item Programación de interface de usuario modo médico(10 hs).
+	\item Programación de interface de usuario modo sistema(10 hs).
+	\item Prueba de envío y recepción de datos modo enfermera al broker(10 hs).
+	\item Prueba de envío y recepción de datos modo médico al broker(10 hs).
+	\item Programación de funciones de consulta de datos a la base de datos modo enfermera(10 hs).
+	\item Prueba de envío y recepción de datos modo sistema al broker(10 hs).
+	\item Prueba de envío y recepción de datos entre clientes modo enfermera y cliente modo médico (10 hs).
+	\item Programación y prueba de lectura de QR usuario modo enfermera(6 hs).
+	\item Programación y prueba de captura/compresión/envío de audio usuario modo enfermera(30 hs).
+	\item Prueba de acceso de usuarios(10 hs).
 	\end{enumerate}
-\item Testeo de sistema(10 hs)
+\item Testeo de sistema(10 hs).
 	\begin{enumerate}	
-	\item Prueba del funciomiento correcto con 2 enfermeras 2 médicos y 3 llamadores  (10 hs)
+	\item Prueba del funciomiento correcto con 2 enfermeras 2 médicos y 3 llamadores(10 hs).
 	\end{enumerate}	
 \end{enumerate}
 
-Cantidad total de horas: (620 hs)
+Cantidad total de horas: (620 hs).
 
 
 
