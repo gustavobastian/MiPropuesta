@@ -457,11 +457,8 @@ Los entregables del proyecto son:
 	\item Código del sistema(utilizando dockerhub y github).
 \end{itemize}
 
-
-
 \section{9. Desglose del trabajo en tareas}
 \label{sec:wbs}
-
 
 Desglose del trabajo:
 
@@ -519,13 +516,9 @@ Desglose del trabajo:
 	\item Redacción de la memoria técnica del proyecto(50 hs).
 	\end{enumerate}	
 		
-	
 \end{enumerate}
 
 Cantidad total de horas: (600 hs).
-
-\newpage 
-
 
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
@@ -538,16 +531,16 @@ Cantidad total de horas: (600 hs).
 %\url{https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ:_A_Tutorial_for_Beginners_(Part_3)\%E2\%80\%94Creating_Flowcharts}
 
 %\end{consigna}
-En la siguiente figura se identifica mediante un color las distintas etapas del proyecto:
+En la siguiente figuras se identifican mediante un color las distintas etapas del proyecto:
 
-\begin{figure}[htpb]
+\begin{figure}
 \centering 
 \includegraphics[width=.8\textwidth]{./Figuras/AoN-2.png}
 \caption{Colores en \textit{Activity on Node}}
-\label{fig:AoN}
+\label{fig:AoN0}
 \end{figure}
-\newpage 
-En la siguiente figura se presenta el diagrama de Activity on Node:
+
+
 \begin{figure}[htpb]
 \centering 
 \includegraphics[width=.8\textwidth]{./Figuras/diagramaAoN.png}
@@ -558,13 +551,13 @@ En la siguiente figura se presenta el diagrama de Activity on Node:
 
 \section{11. Diagrama de Gantt}
 \label{sec:gantt}
-En la siguiente figura se presenta la lista de tareas ingresadas al sistema de gestion de tareas.
+En la siguiente figura se presenta la lista de tareas ingresadas al sistema de gestion de tareas, un diagrama de gantt reducido, con las tareas acordes con el diagrama Activity on Node y otro con todas las tareas.
 
 \begin{figure}
 \centering 
 \includegraphics[height=.85\textheight]{./Figuras/Tareas-desc.pdf}
-\caption{Nombre de tareas`}
-\label{fig:diagGantt}
+\caption{Nombre de tareas}
+\label{fig:diagGantt0}
 \end{figure}
 
 %\begin{consigna}{red}
@@ -616,7 +609,6 @@ En la siguiente figura se presenta la lista de tareas ingresadas al sistema de g
 %\end{figure}
 
 
-En las figuras siguientes se presenta un diagrama de gantt reducido, con las tareas acordes con el diagrama Activity on Node y otro con todas las tareas.
 
 \begin{landscape}
 \begin{figure}[htpb]
@@ -634,7 +626,7 @@ En las figuras siguientes se presenta un diagrama de gantt reducido, con las tar
 \centering 
 \includegraphics[height=.85\textheight]{./Figuras/tareas.png}
 \caption{Diagrama de Gantt}
-\label{fig:diagGantt}
+\label{fig:diagGantt2}
 \end{figure}
 
 \end{landscape}
@@ -642,46 +634,49 @@ En las figuras siguientes se presenta un diagrama de gantt reducido, con las tar
 \section{12. Presupuesto detallado del proyecto}
 \label{sec:presupuesto}
 
-\begin{consigna}{red}
-Si el proyecto es complejo entonces separarlo en partes:
-\begin{itemize}
-	\item Un total global, indicando el subtotal acumulado por cada una de las áreas.
-	\item El desglose detallado del subtotal de cada una de las áreas.
-\end{itemize}
+%\begin{consigna}{red}
+%Si el proyecto es complejo entonces separarlo en partes:
+%\begin{itemize}
+%	\item Un total global, indicando el subtotal acumulado por cada una de las áreas.
+%	\item El desglose detallado del subtotal de cada una de las áreas.
+%\end{itemize}
 
-IMPORTANTE: No olvidarse de considerar los COSTOS INDIRECTOS.
+%IMPORTANTE: No olvidarse de considerar los COSTOS INDIRECTOS.
 
-\end{consigna}
+%\end{consigna}
+
+
 
 \begin{table}[htpb]
 \centering
 \begin{tabularx}{\linewidth}{@{}|X|c|r|r|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0} 
-\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS DIRECTOS} \\ \hline
+\multicolumn{4}{|l|}{\cellcolor[HTML]{C0C0C0}COSTOS DIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 Descripción &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
- &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} &
-  \multicolumn{1}{c|}{} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
-   \\ \hline
+  \multicolumn{1}{|l|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
+  \multicolumn{1}{|l|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
+  \multicolumn{1}{|l|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
+ Investigación &
+  \multicolumn{1}{|l|}{60hs}&
+  \multicolumn{1}{|l|}{1000}&
+  \multicolumn{1}{|l|}{60000} \\ \hline
+ Programación&
+  \multicolumn{1}{|l|}{424hs} &
+  \multicolumn{1}{|l|}{1000} &
+  \multicolumn{1}{|l|}{424000} \\ \hline
+ Testing&
+  \multicolumn{1}{|l|}{66hs} &
+  \multicolumn{1}{|l|}{1000} &
+  \multicolumn{1}{|l|}{66000} \\ \hline 
+ Documentación&
+  \multicolumn{1}{|l|}{50hs} &
+  \multicolumn{1}{|l|}{1000} &
+  \multicolumn{1}{|l|}{50000} \\ \hline  
+
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
+  \multicolumn{1}{|l|}{600000} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
@@ -689,23 +684,27 @@ Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
+\multicolumn{1}{|l|}{Raspberry pi 4(Server)} &
+  \multicolumn{1}{|l|}{1} &
+  \multicolumn{1}{|l|}{27000} &
+   \multicolumn{1}{|l|}{27000} 
    \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
+\multicolumn{1}{|l|}{Costos de Luz eléctrica} &
+  \multicolumn{1}{|l|}{600} &
+  \multicolumn{1}{|l|}{4} &
+  \multicolumn{1}{|l|}{2400} 
    \\ \hline
-\multicolumn{1}{|l|}{} &
-   &
-   &
+\multicolumn{1}{|l|}{Asesorías} &
+  \multicolumn{1}{|l|}{20hs} &
+  \multicolumn{1}{|l|}{1000} &
+  \multicolumn{1}{|l|}{20000} 
    \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{c|}{} \\ \hline
+  \multicolumn{1}{|l|}{49400} \\ \hline
 \rowcolor[HTML]{C0C0C0}
-\multicolumn{3}{|c|}{TOTAL} &
-   \\ \hline
+\multicolumn{3}{|l|}{TOTAL} &
+\multicolumn{1}{|l|}{649400} \\ \hline
+
 \end{tabularx}%
 \end{table}
 
