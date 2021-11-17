@@ -168,7 +168,7 @@ En la figura 1 se presenta un diagrama de interconexión entre los dispositivos.
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.7\textwidth]{./Figuras/diag2.pdf}
+\includegraphics[width=.7\textwidth]{./Figuras/diag3.pdf}
 \caption{ Diagrama en bloques del sistema.}
 \label{fig:diagBloques}
 \end{figure}
@@ -472,53 +472,56 @@ Desglose del trabajo:
 	\item Investigar bibliotecas gráficas para implementar página web (20 hs).
 	\item Investigar bibliotecas gráficas para implementar aplicación móvil (20 hs).
 	\end{enumerate}
-\item Implementación del servidor web(110 hs).
+\item Implementación del servidor web(40 hs).
 	\begin{enumerate}
-	\item Instalación y configuración de Node.Js(30 hs).
-	\item Instalación del broker MQTT (40 hs).
-	\item Programación de funciones de consulta para aplicación web /móvil (40 hs).
+	\item Instalación y configuración de Node.Js(10 hs).
+	\item Instalación del broker MQTT (10 hs).
+	\item Programación de funciones de consulta para aplicación web /móvil (20 hs).
 
 	\end{enumerate}
 \item Implementación de la base de datos (110 horas).
 	\begin{enumerate}
 	\item Instalación de base de datos (40 horas).
 	\item Configuración de parámetros de seguridad y datos (30 horas).
-	\item Creación y carga de datos ficticios para pruebas (40 horas).
+	\item Creación y carga de datos en tablas(40 horas).
 
 	\end{enumerate}
 \item Implementación de página web (190 horas).
 	\begin{enumerate}
 	\item Programación de funciones MQTT como cliente del broker (50 hs).
 	\item Prueba de envío y recepción de datos al broker (10 hs).
-	\item Programación de funciones de consulta de datos a la base de datos (40 hs).
-	\item Programación de funciones de carga de datos a la base de datos (40 hs).
+	\item Programación de funciones de consulta de datos a la base de datos (CRUD parte 1) (40 hs).
+	\item Programación de funciones de carga de datos a la base de datos (CRUD parte 2) (40 hs).
 	\item Programación de lógica de acceso y seguridad de usuarios (40 hs).
 	\item Prueba de acceso de usuarios (10 hs).
 	\end{enumerate}
 	
 \item Implementación de aplicación enfermera (140 horas).
 	\begin{enumerate}
-	\item Programación de interfaz de login de usuarios (4 hs).
-	\item Programación de lógica y acceso de seguridad de usuarios (10 hs).
-	\item Programación de interfaz de usuario modo enfermera (10 hs).
-	\item Programación de interfaz de usuario modo médico (10 hs).
-	\item Programación de interfae de usuario modo sistema (10 hs).
-	\item Prueba de envío y recepción de datos modo enfermera al broker (10 hs).
-	\item Prueba de envío y recepción de datos modo médico al broker (10 hs).
-	\item Programación de funciones de endpoint de la base de datos modo enfermera (10 hs).
-	\item Prueba de envío y recepción de datos modo sistema al broker (10 hs).
+	\item Programación de interfaz de login de usuarios (8 hs).
+	\item Testeo de lógica y acceso de seguridad de usuarios (6 hs).
+	\item Programación de interfaces de usuario aplicación móvil (30 hs).
+	\item Programación de funciones de acceso a la base de datos (40 hs).
 	\item Prueba de envío y recepción de datos entre clientes modo enfermera y cliente modo médico (10 hs).
 	\item Programación y prueba de lectura de códigos QR (6 hs).
-	\item Programación y prueba de captura/compresión/envío de audio usuario modo enfermera (30 hs).
-	\item Prueba de acceso de usuarios (10 hs).
+	\item Programación de captura/compresión/envío de audio usuario modo enfermera (30 hs).
+	\item Prueba de envíos de distintos audios (10 hs).
 	\end{enumerate}
+	
 \item Pruebas de sistema (10 hs).
 	\begin{enumerate}	
 	\item Prueba del funciomiento correcto con 2 enfermeras 2 médicos y 3 llamadores (10 hs).
 	\end{enumerate}	
+
+\item Memoria técnica del proyecto (50 hs).
+	\begin{enumerate}	
+	\item Redacción de la memoria técnica del proyecto(50 hs).
+	\end{enumerate}	
+		
+	
 \end{enumerate}
 
-Cantidad total de horas: (620 hs).
+Cantidad total de horas: (600 hs).
 
 \newpage 
 
@@ -538,11 +541,12 @@ En la siguiente figura se identifica mediante un color las distintas etapas del 
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.8\textwidth]{./Figuras/coloresAON.png}
+\includegraphics[width=.8\textwidth]{./Figuras/AoN-2.png}
 \caption{Colores en \textit{Activity on Node}}
 \label{fig:AoN}
 \end{figure}
 \newpage 
+En la siguiente figura se presenta el diagrama de Activity on Node:
 \begin{figure}[htpb]
 \centering 
 \includegraphics[width=.8\textwidth]{./Figuras/diagramaAoN.png}
@@ -551,22 +555,13 @@ En la siguiente figura se identifica mediante un color las distintas etapas del 
 \end{figure}
 
 
+\newpage 
 
 
 \section{11. Diagrama de Gantt}
 \label{sec:gantt}
 
 \begin{consigna}{red}
-
-Existen muchos programas y recursos \textit{online} para hacer diagramas de gantt, entre los cuales destacamos:
-
-\begin{itemize}
-\item Planner
-\item GanttProject
-\item Trello + \textit{plugins}. En el siguiente link hay un tutorial oficial: \\ \url{https://blog.trello.com/es/diagrama-de-gantt-de-un-proyecto}
-\item Creately, herramienta online colaborativa. \\\url{https://creately.com/diagram/example/ieb3p3ml/LaTeX}
-\item Se puede hacer en latex con el paquete \textit{pgfgantt}\\ \url{http://ctan.dcc.uchile.cl/graphics/pgf/contrib/pgfgantt/pgfgantt.pdf}
-\end{itemize}
 
 Pegar acá una captura de pantalla del diagrama de Gantt, cuidando que la letra sea suficientemente grande como para ser legible. 
 Si el diagrama queda demasiado ancho, se puede pegar primero la ``tabla'' del Gantt y luego pegar la parte del diagrama de barras del diagrama de Gantt.
@@ -575,7 +570,25 @@ Configurar el software para que en la parte de la tabla muestre los códigos del
 Configurar el software para que al lado de cada barra muestre el nombre de cada tarea.\\
 Revisar que la fecha de finalización coincida con lo indicado en el Acta Constitutiva.
 
-En la figura \ref{fig:gantt}, se muestra un ejemplo de diagrama de gantt realizado con el paquete de \textit{pgfgantt}. En la plantilla pueden ver el código que lo genera y usarlo de base para construir el propio.
+En la figura \ref{fig:gantt}, se muestra  un ejemplo de diagrama de gantt realizado con el paquete de \textit{pgfgantt}. En la plantilla pueden ver el código que lo genera y usarlo de base para construir el propio.
+\begin{figure}[htbp]
+\begin{center}
+\begin{ganttchart}{1}{12}
+  \gantttitle{2020}{12} \\
+  \gantttitlelist{1,...,12}{1} \\
+  \ganttgroup{Group 1}{1}{7} \\
+  \ganttbar{Task 1}{1}{2} \\
+  \ganttlinkedbar{Task 2}{3}{7} \ganttnewline
+  \ganttmilestone{Milestone o hito}{7} \ganttnewline
+  \ganttbar{Final Task}{8}{12}
+  \ganttlink{elem2}{elem3}
+  \ganttlink{elem3}{elem4}
+\end{ganttchart}
+\end{center}
+\caption{Diagrama de gantt de ejemplo}
+\label{fig:gantt}
+\end{figure}
+
 
 \begin{figure}[htbp]
 \begin{center}
