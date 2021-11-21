@@ -68,6 +68,10 @@ Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios 
 1      & Se completa hasta el punto 5 inclusive                 & 3/11/2021 \\ \hline
 2      & Se completa hasta el punto 9 inclusive
 & 11/11/2021 \\ \hline
+3      & Se corrigen historias de usuario y se completa hasta el punto 12 inclusive
+& 18/11/2021 \\ \hline
+4      & Se completa la totalidad del documento
+& 25/11/2021 \\ \hline
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
 %		  Así                                                    & dd/mm/aaaa \\ \hline
@@ -213,7 +217,7 @@ Orientador    & \supname	      & \pertesupname 	& Director trabajo final \\ \hli
 %Equipo        & miembro1 \newline 
 %				miembro2          &              	&        	\\ \hline
 %Opositores    &                   &              	&        	\\ \hline
-Usuario final & Hospitales, personal de salud, administradores de sistemas         &  --            	&  --      	\\ \hline
+Usuario final &personal de salud, administradores de sistemas         &  --            	&  --      	\\ \hline
 \end{tabularx}
 \end{table}
 
@@ -351,6 +355,9 @@ Los principales requerimientos relevados son los siguientes:
 		\item La aplicación web debe ser permitir visualización de estadísticas de pacientes o enfermeras.
 		\item La aplicación debe contener acceso con usuario y contraseña para cada persona.
 		\end{enumerate}			
+	
+	
+	
 	\item Requerimientos funcionales de la aplicación enfermera:
 		\begin{enumerate}
 			\item La aplicación enfermera debe tener 3 modos de uso: usuario médico, usuario enfermera y usuario sistema.
@@ -365,7 +372,7 @@ Los principales requerimientos relevados son los siguientes:
 	\item Requerimientos de documentación:
 		\begin{enumerate}
 			\item Confección de documento con información relativa a la base de datos: detalles de la misma y de API para acceder.
-			\item Diagramas UML de aplicación sistema, aplicación enfermera, aplicación médico y página web.
+			\item Memoria del proyecto con diagramas UML de aplicación modo sistema, aplicación modo enfermera, aplicación modo médico y página web.
 			
 		\end{enumerate}
 		
@@ -689,16 +696,16 @@ Descripción &
   \multicolumn{1}{|l|}{27000} &
    \multicolumn{1}{|l|}{27000} 
    \\ \hline
-\multicolumn{1}{|l|}{Costos de Luz eléctrica} &
+\multicolumn{1}{|l|}{Costos de Consumo eléctrico} &
   \multicolumn{1}{|l|}{600} &
   \multicolumn{1}{|l|}{4} &
   \multicolumn{1}{|l|}{2400} 
    \\ \hline
-\multicolumn{1}{|l|}{Asesorías} &
-  \multicolumn{1}{|l|}{20hs} &
-  \multicolumn{1}{|l|}{1000} &
-  \multicolumn{1}{|l|}{20000} 
-   \\ \hline
+%\multicolumn{1}{|l|}{Asesorías} &
+%  \multicolumn{1}{|l|}{20hs} &
+%  \multicolumn{1}{|l|}{1000} &
+%  \multicolumn{1}{|l|}{20000} 
+%   \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
   \multicolumn{1}{|l|}{49400} \\ \hline
 \rowcolor[HTML]{C0C0C0}
@@ -712,27 +719,46 @@ Descripción &
 \section{13. Gestión de riesgos}
 \label{sec:riesgos}
 
-\begin{consigna}{red}
-a) Identificación de los riesgos (al menos cinco) y estimación de sus consecuencias:
+
  
-Riesgo 1: detallar el riesgo (riesgo es algo que si ocurre altera los planes previstos de forma negativa)
+Riesgo 1: No contar con un dispositivo de los necesario para el testeo de las aplicaciones.
 \begin{itemize}
-	\item Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de severidad (S).
-	\item Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).\\
-	Justificar el motivo por el cual se asigna determinado número de (O). 
+	\item Severidad (S): 10.\newline 
+	Justificación: Al ser la aplicación multiplataforma, es necesario contar con un dispositivo Android, un dispositivo IOS y una pc con navegador web.
+	\item Probabilidad de ocurrencia (O): 5.\newline 
+	Justificación: En este momento no se posee un dispositivo IOS, aunque se tiene posibilidades de acceder a uno.
 \end{itemize}   
 
-Riesgo 2:
+Riesgo 2: Disminución de tiempo disponible para la realización del plan trazado.
 \begin{itemize}
-	\item Severidad (S): 
-	\item Ocurrencia (O):
+	\item Severidad (S): 7. \newline 
+	Justificación: El disminuir el tiempo diario asignado a cada tarea, retrasa todo el calendario.
+	\item Ocurrencia (O):3. \newline 
+	Justificación: el planning está bien ajustado, y es muy poco probable que surgan actividades adicionales que ocupen al recurso humano.
 \end{itemize}
 
-Riesgo 3:
+Riesgo 3: Daño en equipamiento utilizado en el proyecto por problemas en el suministro eléctrico.
 \begin{itemize}
-	\item Severidad (S): 
-	\item Ocurrencia (O):
+	\item Severidad (S): 10.\newline 
+	Justificación: genera retrasos temporales y modificaciones al presupuesto ya que se debe adquirir nuevos recursos materiales, instalar el framework de desarrollo y acondicionarlo para continuar el desarrollo.
+	\item Ocurrencia (O): 3.\newline 
+	Justificación: en estos momentos el equipamiento se encuentra protegido mediante un estabilizador de tensión.
+\end{itemize}	
+Riesgo 4: No contar con colaboradores para realizar la validación del sistema.
+\begin{itemize}
+	\item Severidad (S): 5.\newline 
+	Justificación: es necesario que los colaboradores sean idoneos.
+	\item Ocurrencia (O): 8.\newline 
+	Justificación: Debido a que los colaboradores poseen otras tareas en su trabajo puede que no puedan dedicarle el tiempo necesario a las pruebas.
+\end{itemize}
+Riesgo 5: Surgimiento de una alternativa con mejores prestaciones a la sugerida en el plan de trabajo(nueva librería, framework, etc).
+\begin{itemize}
+	\item Severidad (S): 1.\newline 
+	Justificación: el surgimiento de una nueva alternativa con mejores prestaciones a la elegida para el desarrollo puede dejar al producto en una posición de desventaja respecto a la competencia.
+	\item Ocurrencia (O): 10.\newline 
+	Justificación: en el rubro informático continuamente surgen nuevas alternativas para el desarrollo. 	
+		 
+	
 \end{itemize}
 
 
@@ -744,70 +770,221 @@ b) Tabla de gestión de riesgos:      (El RPN se calcula como RPN=SxO)
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Riesgo & S & O & RPN & S* & O* & RPN* \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
-       &   &   &     &    &    &      \\ \hline
+1.No contar con un dispositivo de los necesario para el testeo de las aplicaciones.    &   10 & 5  &  50  &  5  & 1   & 5   \\ \hline
+2.Disminución de tiempo disponible para la realización del plan trazado       & 7  & 3  & 21    &    &    &      \\ \hline
+3.Daño en equipamiento utilizado en el proyecto por problemas en el suministro eléctrico       & 10  & 3  & 30    &  1  &   1 &     1 \\ \hline
+4.No contar con colaboradores para realizar la validación del sistema.     & 5  & 8 & 40    &  5  &  2  &    10  \\ \hline
+5.Surgimiento de una alternativa con mejores prestaciones a la sugerida en el plan de trabajo       & 1  & 10 & 10    &    &    &      \\ \hline
 \end{tabularx}%
 \end{table}
 
 Criterio adoptado: 
-Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a...
+Se tomarán medidas de mitigación en los riesgos cuyos números de RPN sean mayores a 25.
 
 Nota: los valores marcados con (*) en la tabla corresponden luego de haber aplicado la mitigación.
 
 c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo establecido:
  
-Riesgo 1: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
-  Nueva asignación de S y O, con su respectiva justificación:
-  - Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de severidad (S).
-  - Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).
-          Justificar el motivo por el cual se asigna determinado número de (O).
+%Riesgo 1: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
+ % Nueva asignación de S y O, con su respectiva justificación:
+ % - Severidad (S): mientras más severo, más alto es el número (usar números del 1 al 10).
+  %        Justificar el motivo por el cual se asigna determinado número de severidad (S).
+  %- Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).
+  %        Justificar el motivo por el cual se asigna determinado número de (O).
+          
+Riesgo 1: Se buscará contactos conocidos que posean un dispositivo de esas características.\newline
+-Severidad(S) : 5.\newline
+	Justificación: Impide la validación del sistema en una plataforma.\newline
+-Ocurrencia: 1.\newline
+	Justificación: es muy improbable que al momento de la validación no se encuentre el recurso.
 
-Riesgo 2: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
+Riesgo 3: Se incorpora un sistema de alimentación ininterrumpible (UPS,  Uninterruptable Power Supply)y se mantiene todo progreso del trabajo en servidores en la nube. 
+\newline
+-Severidad(S) : 1.\newline
+Justificación: Al tener un equipo de backup y todo lo trabajado en la nube, no existe posibilidad de demoras por este motivo.\newline
+-Ocurrencia: 1.\newline
+Justificación: al incorporar la ups, los daños a los discos rígidos se anulan.\newline
  
-Riesgo 3: plan de mitigación (si por el RPN fuera necesario elaborar un plan de mitigación).
+Riesgo 4: Se gestiona una lista de contactos que se encargarán de validar el sistema y se genera un compromiso con los mismos.
+\newline
+-Severidad(S) : 5.\newline
+Justificación: No se modifica la severidad del mismo.
+\newline
+-Ocurrencia: 2.\newline
+Justificación: Al haber varios contactos, la imposibilidad simultanea de todos es improbable.\newline
 
-\end{consigna}
+
+
+
+
 
 
 \section{14. Gestión de la calidad}
 \label{sec:calidad}
 
-\begin{consigna}{red}
-Para cada uno de los requerimientos del proyecto indique:
-\begin{itemize} 
-\item Req \#1: copiar acá el requerimiento.
+
 
 \begin{itemize}
-	\item Verificación para confirmar si se cumplió con lo requerido antes de mostrar el sistema al cliente. Detallar 
-	\item Validación con el cliente para confirmar que está de acuerdo en que se cumplió con lo requerido. Detallar  
-\end{itemize}
+
+\item Req 1.1:El servidor debe tener instalado Eclipse Mosquitto como broker MQTT.
+	\begin{itemize}
+	\item Verificación: Se verificará que el servidor se encuentre listo para recibir conexiones.
+	\item Validación: Se generarán envíos a traves de un software de envíos de paquetes TCP y se entregaran informes al cliente.
+	\end{itemize}
+
+
+\item Req 1.2: El servidor debe tener endpoints para interactuar con una aplicación Web, para consultas y envío de datos hacia dispositivos clientes.
+	\begin{itemize}
+	\item Verificación: Se verificará que el servidor responda correctamente a solicitudes desde dispositivos.
+	\item Validación: Se generarán peticiones según las aplicaciones programadas y se analizarán las respuestas(se entregará informe al cliente).
+	\end{itemize}
+
+\item Req 1.3: El servidor debe tener endpoints para interactuar con la base de datos.
+	\begin{itemize}
+	\item Verificación: Se verificará la presencia de las funciones CRUD a la base de datos. 
+	\item Validación: Se validará que las funciones respondan a las aplicaciones correctamente y se entregará informe al cliente.
+	\end{itemize}
+
+\item Req 2.1: El sistema debe poseer una base de datos relacional.
+	\begin{itemize}
+	\item Verificación: Se verificará la presencia de la base de datos.  
+	\item Validación: Se cargarán tablas en las bases de datos y se validaran las funciones CRUD y se entregará informe al cliente.
+	\end{itemize}
+
+\item Req 2.2: La base de datos debe poseer datos cargados por default.
+	\begin{itemize}
+	\item Verificación: Se chequeará que la base de datos contenga datos.
+	\item Validación: Se chequeará que los datos sean correctos.
+	\end{itemize}
+
+\item Req 2.3: La base de datos debe poseer datos cargados por default.
+	\begin{itemize}
+	\item Verificación: Se chequeará que la base de datos contenga datos.
+	\item Validación: Se chequeará que los datos sean correctos.
+	\end{itemize}
+	
+\item Req 2.4: La base de datos a utilizar debe poseer las siguientes tablas:
+			\begin{itemize}
+				\item[]
+				\begin{itemize}
+					\item Habitaciones
+					\item Pacientes			
+					\item Médicos
+					\item Enfermeras			
+					\item Eventos 
+				\end{itemize}	
+			\end{itemize}	
+	\begin{itemize}	
+	\item Verificación: Se chequeará la estructura necesaria.
+	\item Validación: Se chequeará que se puedan cargar los datos en la estructura y se entregará diagrama de base de datos y datos ejemplo al cliente.
+	\end{itemize}	
+
+
+\item Req 3.1: La página web debe ser cliente del broker MQTT.
+	\begin{itemize}
+	\item Verificación: Se verificará que la pagina sea cliente del servidor.
+	\item Validación:  Se programará el cliente siguiendo las especificaciones de bibliotecas de clientes MQTT y se validaron los datos enviados al servidor.
+	\end{itemize}
+\item Req 3.2: La página web debe poseer funciones de consulta o modificación de la base de datos.
+	\begin{itemize}
+	\item Verificación: Se verificará que desde la página se puedan cargar o modificar datos en la base de datos.
+	\item Validación:  Se validará que la interface de usuario sea práctica para el cliente.
+	\end{itemize}
+\item Req 3.3: La página web debe ser permitir visualización de estadísticas de pacientes o enfermeras. 
+	\begin{itemize}
+	\item Verificación: Se verificará que la aplicación pueda mostrar nro de visitas a un paciente en cierto día, y la cantidad de llamadas a las que acudió cierta enfermera en un día.
+	\item Validación:  Se presentará a los clientes la forma de presentar la información y se evaluara si es del agrado o no.
+	\end{itemize}	
+\item Req 3.4: La aplicación debe contener acceso con usuario y contraseña para cada persona. 
+	\begin{itemize}
+	\item Verificación: Se comprobará el funcionamiento con distintos usuarios, contraseñas y modos de uso.
+	\item Validación:  Se presenta al cliente la forma de funcionamiento y el mismo evalua si es de su agrado.
+	\end{itemize}		
+\item Req 4.1: La aplicación enfermera debe tener 3 modos de uso: usuario médico, usuario enfermera y usuario sistema.
+	\begin{itemize}
+	\item Verificación: Se comprobará que se puede logear con los distintos módos.
+	\item Validación: Se presentará al cliente los distintos modos de funcionamiento y se consultará si es del agrado.
+	\end{itemize}		
+
+\item Req 4.2: Al logearse el usuario , y contrastarse con la base de datos del sistema, se activa el modo correspondiente.
+	\begin{itemize}
+	\item Verificación:Se comprobará que se puede logear con los distintos módos y que hay una comunicación efectiva con la base de datos.
+	\item Validación: Se consultará al cliente si es del agrado..
+	\end{itemize}		
+
+\item Req 4.3: La aplicación en modo enfermera debe permitir leer códigos QR.
+	\begin{itemize}
+	\item Verificación: Se comprobará que se puede escanear el código QR de la cama del paciente cuando la aplicación está logeada en modo enfermera, se comunica con el sistema y se accionan las actividades correspondientes.
+	\item Validación:  Se presenta el funcionamiento al cliente y se consulta si es del agrado.
+	\end{itemize}		
+
+\item Req 4.4: La aplicación en modo enfermera debe poder descargar información relevante del paciente (medicamentos a suministrar, controles a realizar, contacto del médico a cargo del tratamiento, etc).	
+	\begin{itemize}
+	\item Verificación: Se verifica que se pueda descargar de la base de datos la información necesaria al presentarse el código qr.
+	\item Validación:  Se consulta al cliente si es del agrado. Puede ser afectado por el tipo de dispositivo(tamaño de visualización).
+	\end{itemize}		
+
+\item Req 4.5: La aplicación en modo sistema debe mostrar las habitaciones sin atención, según una tabla de prioridades y en caso de igualdad de prioridades, mostrár según el orden de llamada.
+	\begin{itemize}
+	\item Verificación: Se loguea en la aplicación como usuario sistema y se verifica la visualización correcta.
+	\item Validación:  Se presenta al cliente y se consulta si es de su agrado.
+	\end{itemize}		
+
+
+\item Req 4.6: El modo usuario médico y el modo usuario enfermera deben poder enviar mensajes de textos o sonido comprimido en 32kbps (mp3).
+	\begin{itemize}
+	\item Verificación: Se hace una demostración de envío de audio entre dos usuarios enfermera y médico.
+	\item Validación:  Se muestra al cliente y se consulta si es de su agrado.
+	\end{itemize}		
+
+\item Req 5.1: Confección de documento con información relativa a la base de datos: detalles de la misma y de API para acceder.
+	\begin{itemize}
+	\item Verificación: Se verifica la presencia de la documentación.
+	\item Validación:  Se presenta al cliente.
+	\end{itemize}	
+
+\item Req 5.2: Memoria del proyecto con diagramas UML de aplicación modo sistema, aplicación modo enfermera, aplicación modo médico y página web.
+
+	\begin{itemize}
+	\item Verificación: Se verifica la presencia de la documentación.
+	\item Validación:  Se presenta al cliente.
+	\end{itemize}		
+		
+\item Req 6.2: El sistema debe integrar el funcionamiento del servidor con base de datos , aplicación web y aplicaciones moviles.
+
+	\begin{itemize}
+	\item Verificación: Se realiza un video con una demostración del sistema.
+	\item Validación:  Se presenta al cliente el video de la funcionalidad. Se genera una simulación real con colaboradores.
+	\end{itemize}		
+
 
 \end{itemize}
 
-Tener en cuenta que en este contexto se pueden mencionar simulaciones, cálculos, revisión de hojas de datos, consulta con expertos, mediciones, etc.  Las acciones de verificación suelen considerar al entregable como ``caja blanca'', es decir se conoce en profundidad su funcionamiento interno.  En cambio, las acciones de validación suelen considerar al entregable como ``caja negra'', es decir, que no se conocen los detalles de su funcionamiento interno.
 
-\end{consigna}
 
 \section{15. Procesos de cierre}    
 \label{sec:cierre}
 
-\begin{consigna}{red}
-Establecer las pautas de trabajo para realizar una reunión final de evaluación del proyecto, tal que contemple las siguientes actividades:
+%\begin{consigna}{red}
+%Establecer las pautas de trabajo para realizar una reunión final de evaluación del proyecto, tal que contemple las siguientes actividades:
 
+%\begin{itemize}
+%	\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:
+%	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento a aplicar. 
+%	\item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, y los problemas que surgieron y cómo se solucionaron:
+%	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento para dejar registro.
+%	\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:
+%	  - Indicar esto y quién financiará los gastos correspondientes.
+%\end{itemize}
+
+%\end{consigna}
+Al finalizar el proyecto se realizará una evaluación final que contemple las siguientes actividades:
 \begin{itemize}
-	\item Pautas de trabajo que se seguirán para analizar si se respetó el Plan de Proyecto original:
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento a aplicar. 
-	\item Identificación de las técnicas y procedimientos útiles e inútiles que se emplearon, y los problemas que surgieron y cómo se solucionaron:
-	 - Indicar quién se ocupará de hacer esto y cuál será el procedimiento para dejar registro.
-	\item Indicar quién organizará el acto de agradecimiento a todos los interesados, y en especial al equipo de trabajo y colaboradores:
-	  - Indicar esto y quién financiará los gastos correspondientes.
+
+
+\item El responsable del proyecto analizará el cumplimiento del plan del proyecto con sus tiempos indicados y se evaluará los requerimientos no cumplidos.
+\item Se evaluarán los riesgos previstos que efectivamente se hayan manifestado, y el procedimiento de mitigación planificado versus el real. Se evaluaran demoras causadas por eventos no previstos.
+\item El responsable del proyecto realiza una presentación pública del resultado del proyecto asi como del historial de su desarollo.
 \end{itemize}
-
-\end{consigna}
-
 
 \end{document}
