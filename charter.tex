@@ -117,9 +117,9 @@ Se adjunta a esta acta la planificación inicial.
 \label{sec:descripcion}
 
 
-En la actualidad, el avance de la Internet de las Cosas (IOT) y la disminución de costos asociados a la tecnología hacen factible su incorporación a distintos campos de la vida cotidiana. Uno de esos campos es el de infraestructuras hospitalarias inteligentes. 
+En la actualidad, el avance de la Internet de las Cosas (IoT de \textit{Internet of Things}) y la disminución de costos asociados a la tecnología hacen factible su incorporación a distintos campos de la vida cotidiana. Uno de esos campos es el de infraestructuras hospitalarias inteligentes. 
 
-Por otra parte, dentro de las múltiples opciones para realizar la comunicación entre los dispositivos IOT, el protocolo Message Queuing Telemetry Transport (en adelante MQTT) se ha probado como un protocolo confiable y ampliamente utilizado.
+Por otra parte, dentro de las múltiples opciones para realizar la comunicación entre los dispositivos IoT, el protocolo Message Queuing Telemetry Transport (en adelante MQTT) se ha probado como un protocolo confiable y ampliamente utilizado.
 
 Dentro del contexto, en este trabajo se desarrollará una aplicación multiplataforma que utilizará el protocolo MQTT para los distintos participantes  de la actividad hospitalaria. El proyecto es una necesidad de la empresa Surix S.R.L. y se lleva a cabo como parte de la carrera Especialización de Internet de las Cosas.
 
@@ -129,7 +129,7 @@ Surix S.R.L fabrica un sistema IP de llamado a enfermera que está basado en el 
  
 El objetivo del proyecto es realizar un sistema con las ventajas que provee el protocolo MQTT, como es la posibilidad de agregar accesorios rápidamente con bajo costo de software, hardware e implementación. 
 
-MQTT es un protocolo open source liviano, hecho que permite aplicarlo en dispositivos con pocos recursos y baja velocidad de transmisión, ampliamente utilizado en dispositivos IOT. Está basado en la pila TCP/IP, se implementa en la capa de aplicación y sus mensajes se transmiten como colas de publicación/subscripción. 
+MQTT es un protocolo open source liviano, hecho que permite aplicarlo en dispositivos con pocos recursos y baja velocidad de transmisión, ampliamente utilizado en dispositivos IoT. Está basado en la pila TCP/IP, se implementa en la capa de aplicación y sus mensajes se transmiten como colas de publicación/subscripción. 
 
 El desafío de este proyecto consiste en la programación de un sistema que contenga un servidor o broker MQTT, una base de datos donde alojar información de reportes de habitaciones/enfermeras y datos relevantes al paciente (incluyendo temporizadores para suministro de ciertos medicamentos y/o control), una página web para configuración y una aplicación multiplataforma donde se realice la gestión de datos e interacción con los clientes. La aplicación será capaz de identificar la cama correspondiente (mediante lectura de símbolos QR) y de transmitir mensajes de voz en caso de ser necesario.
 
@@ -179,7 +179,7 @@ En la figura 1 se presenta un diagrama de interconexión entre los dispositivos.
 
 %\vspace{25px}
 
-El broker recibe mensajes llamados ``eventos'', de distintos publicadores y los reenvía a los subscriptores que correspondan según una política asignada previamente. El cliente sistema puede gestionar la base de datos con información relevante para los pacientes y también puede observar el estado de las habitaciones. Mientras que el cliente enfermera solo recibe asignaciones o respuestas de un médico, y publica finalización o consulta (por medio de la aplicación). Por último, el cliente médico solo recibe consultas y publica respuestas por medio de la aplicación.
+El broker recibe mensajes llamados ``eventos'', de distintos publicadores y los reenvía a los subscriptores que correspondan según una política asignada previamente. El cliente sistema puede gestionar la base de datos con información relevante para los pacientes y también puede observar el estado de las habitaciones. Mientras que el cliente enfermera solo recibe asignaciones o respuestas de un médico, y publica finalización o consulta por medio de la aplicación. Por último, el cliente médico solo recibe consultas y publica respuestas por medio de la aplicación.
 
 Con la aplicación web se puede cargar la base de datos con información de enfermeras, pacientes y médicos.
 \vfill
@@ -322,7 +322,7 @@ Para el desarrollo del presente proyecto se supone que:
 Los principales requerimientos relevados son los siguientes:
 
 \begin{enumerate}
-	\item Requerimientos funcionales del Servidor:
+	\item Requerimientos funcionales del servidor:
 			\begin{enumerate}
 			\item El servidor debe tener instalado Eclipse Mosquitto como broker MQTT.
 			\item El servidor debe tener endpoints para interactuar con una aplicación Web, para consultas y envío de datos hacia dispositivos clientes.
@@ -330,7 +330,7 @@ Los principales requerimientos relevados son los siguientes:
 
 			
 			\end{enumerate}
-	\item Requerimientos funcionales de la Base de datos:
+	\item Requerimientos funcionales de la base de datos:
 		\begin{enumerate}		
 			\item El sistema debe poseer una base de datos relacional.
 			\item La base de datos debe poseer datos cargados por default.
@@ -361,7 +361,7 @@ Los principales requerimientos relevados son los siguientes:
 	\item Requerimientos funcionales de la aplicación enfermera:
 		\begin{enumerate}
 			\item La aplicación enfermera debe tener 3 modos de uso: usuario médico, usuario enfermera y usuario sistema.
-			\item Al logearse el usuario , y contrastarse con la base de datos del sistema, se activa el modo correspondiente.
+			\item Al logearse el usuario, y contrastarse con la base de datos del sistema, se activa el modo correspondiente.
 			\item La aplicación en modo enfermera debe permitir leer códigos QR.			
 			\item La aplicación en modo enfermera debe poder descargar información relevante del paciente (medicamentos a suministrar, controles a realizar, contacto del médico a cargo del tratamiento, etc).	
 			\item La aplicación en modo sistema debe mostrar las habitaciones sin atención, según una tabla de prioridades y en caso de igualdad de prioridades, mostrár según el orden de llamada.
@@ -399,52 +399,50 @@ Los principales requerimientos relevados son los siguientes:
 %\end{consigna}
 Se identifican los siguientes roles:
 \begin{itemize}
-	\item Usuario final: persona que utilizará el sistema. Existen 4 usuarios finales bien definidos: usuario final modo enfermero, usuario final modo médico y usuario final modo operador del sistema.
-	\item cliente: persona que necesita el desarrollo, sus intereses están orientados al negocio.
+	\item Usuario final: persona que utilizará el sistema. Existen  usuarios finales bien definidos: usuario final modo enfermero, usuario final modo médico y usuario final modo operador del sistema.
+	\item Cliente: persona que necesita el desarrollo. Sus intereses están orientados al negocio.
 
 \end{itemize}
 
 Story points:
-Se utilizarán 1, 2, 3, 5 y 8 para la estimación de las historias de usuario.
+Se utilizarán 1, 2, 3, 5 y 8 para la estimación de las historias de usuario, según la serie de Fibonacci.
 \begin{itemize}
-	\item Historias de 1 punto: son historias cuya implementación es rápida 	y con baja posibilidad de falla. Por ejemplo, envío de un mensaje 			sencillo entre un nodo y el servidor de la red.
-	\item Historias de 2 puntos: son historias cuya implementación es no es 	rápida y pero tienen baja posibilidad de falla. Por ejemplo, diseño de la interfaz de usuario.
-	\item Historias de 3 puntos: son historias cuya implementación no es rápida y posibilidad de falla media . Por ejemplo, lectura de códigos QR, hay que investigar distintas librerías y ver el correcto funcionamiento en distintos dispositivos.
-	\item Historias de 5 puntos: son historias cuya implementación es lenta a y con posibilidad falla alta ya que interactuan varios elementos de la red. Por ejemplo, envío de un mensaje de audio entre distintos actores, debido a que hay que corroborar el funcionamiento de la captura de audio en ambos dispositivos, el correcto traslado por la red y la recepción perfecta del archivo.
-	\item Historias de 8 puntos: son historias cuya implementación es compleja y con mucha posibilidad de falla ya que interactuan distintos componentes del sistema. Por ejemplo, solicitud de ayuda de una enfermera al sistema, debe chequear disponibilidad de otras enfermeras, y dependiendo del tipo de ayuda necesaria, las capacidad de la misma.
+	\item Historias de 1 punto: son historias cuya implementación es rápida 	y con baja posibilidad de falla. Por ejemplo envío de un mensaje 			sencillo entre un nodo y el servidor de la red.
+	\item Historias de 2 puntos: son historias cuya implementación no es rápida, pero tienen baja posibilidad de falla. Por ejemplo el diseño de la interfaz de usuario.
+	\item Historias de 3 puntos: son historias cuya implementación no es rápida y tienen una posibilidad de falla media. Por ejemplo para la lectura de códigos QR es necesario investigar bibliotecas y evaluar el correcto funcionamiento en dispositivos con sistemas operativos distintos.
+	\item Historias de 5 puntos: son historias cuya implementación es lenta y poseen una posibilidad de falla alta ya que interactuan varios elementos de la red. Por ejemplo el envío de un mensaje de audio entre distintos actores, debido a que hay que corroborar el funcionamiento de la captura de audio en ambos dispositivos, el correcto traslado por la red y la recepción perfecta del archivo.
+	\item Historias de 8 puntos: son historias cuya implementación es compleja y poseen  elevada posibilidad de falla porque interactuan distintos componentes del sistema. Por ejemplo en la solicitud de ayuda de una enfermera al sistema, donde se debe chequear disponibilidad de otras enfermeras, y dependiendo del tipo de ayuda necesaria, la capacidad de la misma.
 
 \end{itemize}
 
 Historias de Usuario:
 
 \begin{itemize}
-\item Como usuario en modo enfermero quiero que la aplicación me notifique si hay un pedido de una habitación para ir a atenderla. (1 punto)
+\item Como usuario en modo enfermero quiero que la aplicación me notifique si hay un pedido de una habitación para ir a atenderla.Dificultad baja y posibilidad de falla  baja. (1 punto)
 
-\item Como usuario en modo enfermero quiero que la aplicación permita que notifique que finalicé la tarea para poder recibir otro pedido. (1 punto)
+\item Como usuario en modo enfermero quiero que la aplicación permita que notifique que finalicé la tarea para poder recibir otro pedido. Dificultad baja y posibilidad de falla  baja. (1 punto)
 
-\item Como usuario en modo enfermero quiero que la aplicación me permita notificar que estoy atendiendo para que no tener varios pedidos pendiente.(3 puntos)
+\item Como usuario en modo enfermero quiero que la aplicación me permita notificar que estoy atendiendo para no tener varios pedidos pendiente. Dificultad media y posibilidad de falla media. (3 puntos)
 
-\item Como usuario en modo enfermero quiero que la aplicación permita que consulte a un médico en caso de necesidad. (8 puntos)
+\item Como usuario en modo enfermero quiero que la aplicación permita que consulte a un médico en caso de necesidad. Dificultad muy alta y posibilidad de falla muy alta. (8 puntos)
 
-\item Como usuario en modo enfermero quiero que la aplicación permita obtener información del paciente para entender el estado de la situación. (5 puntos)
+\item Como usuario en modo enfermero quiero que la aplicación permita obtener información del paciente para entender el estado de la situación. Dificultad alta y posibilidad de falla alta. (5 puntos)
 
-\item Como usuario en modo enfermero quiero que la aplicación permita avisar que mi jornada terminó para no recibir más notificaciones. (5 puntos)
+\item Como usuario en modo enfermero quiero que la aplicación permita avisar que mi jornada terminó para no recibir más notificaciones. Dificultad alta y posibilidad de falla alta. (5 puntos)
 
-\item Como usuario en modo enfermero quiero que la aplicación permita que notifique que necesito ayuda de otro enfermero para atender el paciente.
-(8 puntos)
+\item Como usuario en modo enfermero quiero que la aplicación permita que notifique que necesito ayuda de otro enfermero para atender al paciente. Dificultad muy alta y posibilidad de falla muy alta. (8 puntos)
 
-\item Como usuario en modo médico quiero que la aplicación posea un mecanismo sencillo para responder dudas de la enfermera. (3 puntos)
+\item Como usuario en modo médico quiero que la aplicación posea un mecanismo sencillo para responder dudas de la enfermera. Dificultad media y posibilidad de falla media. (3 puntos)
 
-\item Como usuario en modo médico quiero que la aplicación permita acceder a la información del paciente que en caso de consulta de un enfermero. (2 puntos)
+\item Como usuario en modo médico quiero que la aplicación permita acceder a la información del paciente en caso de consulta de un enfermero. Dificultad media y posibilidad de falla baja. (2 puntos)
 
-\item Como usuario en modo sistema quiero que la aplicación me permita asignar tareas temporizadas para atender rutinas preestablecidas por el médico.
-(5 puntos)
+\item Como usuario en modo sistema quiero que la aplicación me permita asignar tareas temporizadas para atender rutinas preestablecidas por el médico. Dificultad alta y posibilidad de falla alta. (5 puntos)
 
-\item Como usuario en modo sistema quiero que la aplicación permita obtener datos estadísticos de cada enfermero para poder reportar. (2 puntos)
+\item Como usuario en modo sistema quiero que la aplicación permita obtener datos estadísticos de cada enfermero para poder reportar. Dificultad media y posibilidad de falla baja. (2 puntos)
 
-\item Como usuario en modo sistema quiero que la aplicación móvil me muestre el estado de las habitaciones. (1 punto)
+\item Como usuario en modo sistema quiero que la aplicación móvil me muestre el estado de las habitaciones. Dificultad baja y posibilidad de falla baja. (1 punto)
 
-\item Como cliente quiero que el sistema sea de fácil instalación. (1 punto)
+\item Como cliente quiero que el sistema sea de fácil instalación. Dificultad baja y posibilidad de falla baja. (1 punto)
 
 \end{itemize}
 
@@ -456,12 +454,12 @@ Historias de Usuario:
 Los entregables del proyecto son:
 
 \begin{itemize}
-	\item Plan de proyecto del Trabajo Final y Memoria Técnica.
+	\item Plan de proyecto del trabajo final y memoria técnica.
 	\item Servidor MQTT.
 	\item Base de datos configurada.
 	\item Aplicación Web responsive.
 	\item Aplicación enfermera (con los 3 modos de funcionamiento).
-	\item Código del sistema(utilizando dockerhub y github).
+	\item Código del sistema (utilizando dockerhub y github).
 \end{itemize}
 
 \section{9. Desglose del trabajo en tareas}
@@ -470,62 +468,65 @@ Los entregables del proyecto son:
 Desglose del trabajo:
 
 \begin{enumerate}
-\item Investigación preliminar (60 hs).
+\item Investigación preliminar (70 hs):
 	\begin{enumerate}
-	\item Investigar funcionamiento del Broker Mosquitto (10 hs).
+	\item Confección del plan de trabajo del proyecto (10 hs).
+	\item Investigar funcionamiento del broker Mosquitto (10 hs).
 	\item Investigar base de datos relacionales (10 hs).
 	\item Investigar bibliotecas gráficas para implementar página web (20 hs).
 	\item Investigar bibliotecas gráficas para implementar aplicación móvil (20 hs).
 	\end{enumerate}
-\item Implementación del servidor web(40 hs).
+\item Implementación del servidor web (40 hs):
 	\begin{enumerate}
-	\item Instalación y configuración de Node.Js(10 hs).
+	\item Instalación y configuración de Node.Js (10 hs).
 	\item Instalación del broker MQTT (10 hs).
 	\item Programación de funciones de consulta para aplicación web /móvil (20 hs).
 
 	\end{enumerate}
-\item Implementación de la base de datos (110 horas).
+\item Implementación de la base de datos (110 hs):
 	\begin{enumerate}
-	\item Instalación de base de datos (40 horas).
-	\item Configuración de parámetros de seguridad y datos (30 horas).
-	\item Creación y carga de datos en tablas(40 horas).
+	\item Instalación de base de datos (40 hs).
+	\item Configuración de parámetros de seguridad y datos (30 hs).
+	\item Creación y carga de datos en tablas (40 hs).
 
 	\end{enumerate}
-\item Implementación de página web (190 horas).
+\item Implementación de página web (190 hs):
 	\begin{enumerate}
 	\item Programación de funciones MQTT como cliente del broker (50 hs).
 	\item Prueba de envío y recepción de datos al broker (10 hs).
-	\item Programación de funciones de consulta de datos a la base de datos (CRUD parte 1) (40 hs).
-	\item Programación de funciones de carga de datos a la base de datos (CRUD parte 2) (40 hs).
+	\item Programación de funciones de consulta de datos a la base de datos (40 hs).
+	\item Programación de funciones de carga de datos a la base de datos (40 hs).
 	\item Programación de lógica de acceso y seguridad de usuarios (40 hs).
 	\item Prueba de acceso de usuarios (10 hs).
 	\end{enumerate}
 	
-\item Implementación de aplicación enfermera (140 horas).
+\item Implementación de aplicación enfermera (140 hs):
 	\begin{enumerate}
 	\item Programación de interfaz de login de usuarios (8 hs).
 	\item Testeo de lógica y acceso de seguridad de usuarios (6 hs).
 	\item Programación de interfaces de usuario aplicación móvil (30 hs).
 	\item Programación de funciones de acceso a la base de datos (40 hs).
 	\item Prueba de envío y recepción de datos entre clientes modo enfermera y cliente modo médico (10 hs).
-	\item Programación y prueba de lectura de códigos QR (6 hs).
+	\item Programación y prueba de lectura de códigos QR (6 hs):
 	\item Programación de captura/compresión/envío de audio usuario modo enfermera (30 hs).
 	\item Prueba de envíos de distintos audios (10 hs).
 	\end{enumerate}
 	
-\item Pruebas de sistema (10 hs).
+\item Pruebas de sistema (10 hs):
 	\begin{enumerate}	
 	\item Prueba del funciomiento correcto con 2 enfermeras 2 médicos y 3 llamadores (10 hs).
 	\end{enumerate}	
 
-\item Memoria técnica del proyecto (50 hs).
+\item Documentación técnica del proyecto (60 hs):
 	\begin{enumerate}	
+	\item Confección de informe de avance (10 hs).
 	\item Redacción de la memoria técnica del proyecto(50 hs).
 	\end{enumerate}	
 		
 \end{enumerate}
 
-Cantidad total de horas: (600 hs).
+Cantidad total de horas: (620 hs).
+\newpage
 
 \section{10. Diagrama de Activity On Node}
 \label{sec:AoN}
@@ -538,32 +539,35 @@ Cantidad total de horas: (600 hs).
 %\url{https://www.overleaf.com/learn/latex/LaTeX_Graphics_using_TikZ:_A_Tutorial_for_Beginners_(Part_3)\%E2\%80\%94Creating_Flowcharts}
 
 %\end{consigna}
-En la siguiente figuras se identifican mediante un color las distintas etapas del proyecto:
 
-\begin{figure}
-\centering 
-\includegraphics[width=.8\textwidth]{./Figuras/AoN-2.png}
-\caption{Colores en \textit{Activity on Node}}
-\label{fig:AoN0}
-\end{figure}
-
+En la figura 2 se identifican mediante distintos colores las tareas del proyecto:
 
 \begin{figure}[htpb]
 \centering 
+\includegraphics[width=.8\textwidth]{./Figuras/AoN-2.png}
+\caption{Colores del diagrama de \textit{Activity on Node}.}
+\label{fig:AoN0}
+
+\end{figure}
+
+
+En la figura 3 se presenta el diagrama de \textit{Activity on Node}, donde el camino crítico es indicado mediante una linea de interconexión resaltada:
+\begin{figure}[htpb]
+\centering 
 \includegraphics[width=.8\textwidth]{./Figuras/diagramaAoN.png}
-\caption{Diagrama en \textit{Activity on Node}}
+\caption{Diagrama de \textit{Activity on Node}.}
 \label{fig:AoN}
 \end{figure}
 
 
 \section{11. Diagrama de Gantt}
 \label{sec:gantt}
-En la siguiente figura se presenta la lista de tareas ingresadas al sistema de gestion de tareas, un diagrama de gantt reducido, con las tareas acordes con el diagrama Activity on Node y otro con todas las tareas.
+En la siguiente figura se presenta la lista de tareas ingresadas al sistema de gestión de tareas, un diagrama de Gantt reducido, con las tareas acordes con el diagrama de \textit{Activity on Node} y otro con todas las tareas.
 
 \begin{figure}
 \centering 
 \includegraphics[height=.85\textheight]{./Figuras/Tareas-desc.pdf}
-\caption{Nombre de tareas}
+\caption{Planificación de tareas.}
 \label{fig:diagGantt0}
 \end{figure}
 
@@ -621,7 +625,7 @@ En la siguiente figura se presenta la lista de tareas ingresadas al sistema de g
 \begin{figure}[htpb]
 \centering 
 \includegraphics[height=.85\textheight]{./Figuras/Tareas-reducida.png}
-\caption{Diagrama de Gantt Tareas principales}
+\caption{Diagrama de Gantt de las Tareas principales.}
 \label{fig:diagGantt}
 \end{figure}
 \end{landscape}
@@ -632,7 +636,7 @@ En la siguiente figura se presenta la lista de tareas ingresadas al sistema de g
 \begin{figure}[htpb]
 \centering 
 \includegraphics[height=.85\textheight]{./Figuras/tareas.png}
-\caption{Diagrama de Gantt}
+\caption{Diagrama de Gantt.}
 \label{fig:diagGantt2}
 \end{figure}
 
@@ -652,7 +656,7 @@ En la siguiente figura se presenta la lista de tareas ingresadas al sistema de g
 
 %\end{consigna}
 
-
+En la siguiente tabla se presentan los gastos previstos del proyecto, expresados en pesos argentinos.
 
 \begin{table}[htpb]
 \centering
@@ -666,9 +670,9 @@ Descripción &
   \multicolumn{1}{|l|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{|l|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
  Investigación &
-  \multicolumn{1}{|l|}{60hs}&
+  \multicolumn{1}{|l|}{80hs}&
   \multicolumn{1}{|l|}{1000}&
-  \multicolumn{1}{|l|}{60000} \\ \hline
+  \multicolumn{1}{|l|}{80000} \\ \hline
  Programación&
   \multicolumn{1}{|l|}{424hs} &
   \multicolumn{1}{|l|}{1000} &
@@ -683,7 +687,7 @@ Descripción &
   \multicolumn{1}{|l|}{50000} \\ \hline  
 
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{|l|}{600000} \\ \hline
+  \multicolumn{1}{|l|}{620000} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
@@ -707,7 +711,7 @@ Descripción &
 %  \multicolumn{1}{|l|}{20000} 
 %   \\ \hline
 \multicolumn{3}{|c|}{SUBTOTAL} &
-  \multicolumn{1}{|l|}{49400} \\ \hline
+  \multicolumn{1}{|l|}{29400} \\ \hline
 \rowcolor[HTML]{C0C0C0}
 \multicolumn{3}{|l|}{TOTAL} &
 \multicolumn{1}{|l|}{649400} \\ \hline
