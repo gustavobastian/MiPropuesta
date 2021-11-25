@@ -544,7 +544,7 @@ En la figura 2 se identifican mediante distintos colores las tareas del proyecto
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.8\textwidth]{./Figuras/AoN-2.png}
+\includegraphics[width=1.5\textwidth]{./Figuras/digramaonnode.pdf}
 \caption{Colores del diagrama de \textit{Activity on Node}.}
 \label{fig:AoN0}
 
@@ -562,15 +562,18 @@ En la figura 3 se presenta el diagrama de \textit{Activity on Node}, donde el ca
 
 \section{11. Diagrama de Gantt}
 \label{sec:gantt}
-En la siguiente figura se presenta la lista de tareas ingresadas al sistema de gestión de tareas, un diagrama de Gantt reducido, con las tareas acordes con el diagrama de \textit{Activity on Node} y otro con todas las tareas.
+En la siguiente figura se presenta la lista de tareas ingresadas al sistema de gestión de tareas y el diagrama de Gantt con las tareas acordes con el diagrama de \textit{Activity on Node}.
 
+\begin{landscape}
 \begin{figure}
+
 \centering 
-\includegraphics[height=.85\textheight]{./Figuras/Tareas-desc.pdf}
+\includegraphics[height=.85\textheight]{./Figuras/tareas.png}
 \caption{Planificación de tareas.}
 \label{fig:diagGantt0}
-\end{figure}
 
+\end{figure}
+\end{landscape}
 %\begin{consigna}{red}
 
 %Pegar acá una captura de pantalla del diagrama de Gantt, cuidando que la letra sea suficientemente grande como para ser legible. 
@@ -624,8 +627,8 @@ En la siguiente figura se presenta la lista de tareas ingresadas al sistema de g
 \begin{landscape}
 \begin{figure}[htpb]
 \centering 
-\includegraphics[height=.85\textheight]{./Figuras/Tareas-reducida.png}
-\caption{Diagrama de Gantt de las Tareas principales.}
+\includegraphics[height=.65\textheight]{./Figuras/planning1.png}
+\caption{Diagrama de Gantt (continua en la página siguiente).}
 \label{fig:diagGantt}
 \end{figure}
 \end{landscape}
@@ -635,7 +638,17 @@ En la siguiente figura se presenta la lista de tareas ingresadas al sistema de g
 \begin{landscape}
 \begin{figure}[htpb]
 \centering 
-\includegraphics[height=.85\textheight]{./Figuras/tareas.png}
+\includegraphics[height=.65\textheight]{./Figuras/planning2.png}
+\caption{Diagrama de Gantt (continua en la página siguiente).}
+\label{fig:diagGantt2}
+\end{figure}
+\end{landscape}
+
+\newpage
+\begin{landscape}
+\begin{figure}[htpb]
+\centering 
+\includegraphics[height=.65\textheight]{./Figuras/planning3.png}
 \caption{Diagrama de Gantt.}
 \label{fig:diagGantt2}
 \end{figure}
@@ -670,9 +683,9 @@ Descripción &
   \multicolumn{1}{|l|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
   \multicolumn{1}{|l|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
  Investigación &
-  \multicolumn{1}{|l|}{80hs}&
+  \multicolumn{1}{|l|}{70hs}&
   \multicolumn{1}{|l|}{1000}&
-  \multicolumn{1}{|l|}{80000} \\ \hline
+  \multicolumn{1}{|l|}{70000} \\ \hline
  Programación&
   \multicolumn{1}{|l|}{424hs} &
   \multicolumn{1}{|l|}{1000} &
@@ -682,9 +695,9 @@ Descripción &
   \multicolumn{1}{|l|}{1000} &
   \multicolumn{1}{|l|}{66000} \\ \hline 
  Documentación&
-  \multicolumn{1}{|l|}{50hs} &
+  \multicolumn{1}{|l|}{60hs} &
   \multicolumn{1}{|l|}{1000} &
-  \multicolumn{1}{|l|}{50000} \\ \hline  
+  \multicolumn{1}{|l|}{60000} \\ \hline  
 
 \multicolumn{3}{|c|}{SUBTOTAL} &
   \multicolumn{1}{|l|}{620000} \\ \hline
@@ -725,12 +738,12 @@ Descripción &
 
 
  
-Riesgo 1: No contar con un dispositivo de los necesario para el testeo de las aplicaciones.
+Riesgo 1: No contar con un dispositivo de los necesarios para el testeo de las aplicaciones.
 \begin{itemize}
 	\item Severidad (S): 10.\newline 
-	Justificación: Al ser la aplicación multiplataforma, es necesario contar con un dispositivo Android, un dispositivo IOS y una pc con navegador web.
+	Justificación: Al ser la aplicación multiplataforma, es menester contar con un dispositivo Android, un dispositivo IOS y una pc con navegador web.
 	\item Probabilidad de ocurrencia (O): 5.\newline 
-	Justificación: En este momento no se posee un dispositivo IOS, aunque se tiene posibilidades de acceder a uno.
+	Justificación: En este momento no se posee un dispositivo IOS pero existen posibilidades de acceder a uno.
 \end{itemize}   
 
 Riesgo 2: Disminución de tiempo disponible para la realización del plan trazado.
@@ -758,7 +771,7 @@ Riesgo 4: No contar con colaboradores para realizar la validación del sistema.
 Riesgo 5: Surgimiento de una alternativa con mejores prestaciones a la sugerida en el plan de trabajo(nueva librería, framework, etc).
 \begin{itemize}
 	\item Severidad (S): 1.\newline 
-	Justificación: el surgimiento de una nueva alternativa con mejores prestaciones a la elegida para el desarrollo puede dejar al producto en una posición de desventaja respecto a la competencia.
+	Justificación: el surgimiento de una nueva alternativa con mejores prestaciones a la elegida para el desarrollo puede dejar al producto en una posición de desventaja respecto a la competencia, no obstante lo cual el utilizar tecnologías ya probadas asegura un nivel de confianza mayor en cuanto a seguridad y estabilidad a lo largo del tiempo.
 	\item Ocurrencia (O): 10.\newline 
 	Justificación: en el rubro informático continuamente surgen nuevas alternativas para el desarrollo. 	
 		 
