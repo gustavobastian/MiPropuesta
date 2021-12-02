@@ -410,15 +410,15 @@ Se utilizarán 1, 2, 3, 5 y 8 para la estimación de las historias de usuario, s
 	\item Historias de 1 punto: son historias cuya implementación es rápida 	y con baja posibilidad de falla. Por ejemplo envío de un mensaje 			sencillo entre un nodo y el servidor de la red.
 	\item Historias de 2 puntos: son historias cuya implementación no es rápida, pero tienen baja posibilidad de falla. Por ejemplo el diseño de la interfaz de usuario.
 	\item Historias de 3 puntos: son historias cuya implementación no es rápida y tienen una posibilidad de falla media. Por ejemplo para la lectura de códigos QR es necesario investigar bibliotecas y evaluar el correcto funcionamiento en dispositivos con sistemas operativos distintos.
-	\item Historias de 5 puntos: son historias cuya implementación es lenta y poseen una posibilidad de falla alta ya que interactuan varios elementos de la red. Por ejemplo el envío de un mensaje de audio entre distintos actores, debido a que hay que corroborar el funcionamiento de la captura de audio en ambos dispositivos, el correcto traslado por la red y la recepción perfecta del archivo.
-	\item Historias de 8 puntos: son historias cuya implementación es compleja y poseen  elevada posibilidad de falla porque interactuan distintos componentes del sistema. Por ejemplo en la solicitud de ayuda de una enfermera al sistema, donde se debe chequear disponibilidad de otras enfermeras, y dependiendo del tipo de ayuda necesaria, la capacidad de la misma.
+	\item Historias de 5 puntos: son historias cuya implementación es lenta y poseen una posibilidad de falla alta ya que interactúan varios elementos de la red. Por ejemplo el envío de un mensaje de audio entre distintos actores, debido a que hay que corroborar el funcionamiento de la captura de audio en ambos dispositivos, el correcto traslado por la red y la recepción perfecta del archivo.
+	\item Historias de 8 puntos: son historias cuya implementación es compleja y poseen  elevada posibilidad de falla porque interactúan distintos componentes del sistema. Por ejemplo en la solicitud de ayuda de una enfermera al sistema, donde se debe chequear disponibilidad de otras enfermeras, y dependiendo del tipo de ayuda necesaria, la capacidad de la misma.
 
 \end{itemize}
 
 Historias de Usuario:
 
 \begin{itemize}
-\item Como usuario en modo enfermero quiero que la aplicación me notifique si hay un pedido de una habitación para ir a atenderla.Dificultad baja y posibilidad de falla  baja. (1 punto)
+\item Como usuario en modo enfermero quiero que la aplicación me notifique si hay un pedido de una habitación para ir a atenderla. Dificultad baja y posibilidad de falla  baja. (1 punto)
 
 \item Como usuario en modo enfermero quiero que la aplicación permita que notifique que finalicé la tarea para poder recibir otro pedido. Dificultad baja y posibilidad de falla  baja. (1 punto)
 
@@ -544,7 +544,7 @@ En la figura 2 se identifican mediante distintos colores las tareas del proyecto
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=1.5\textwidth]{./Figuras/digramaonnode.pdf}
+\includegraphics[width=.7\textwidth]{./Figuras/AoN-2.png}
 \caption{Colores del diagrama de \textit{Activity on Node}.}
 \label{fig:AoN0}
 
@@ -554,7 +554,7 @@ En la figura 2 se identifican mediante distintos colores las tareas del proyecto
 En la figura 3 se presenta el diagrama de \textit{Activity on Node}, donde el camino crítico es indicado mediante una linea de interconexión resaltada:
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.8\textwidth]{./Figuras/diagramaAoN.png}
+\includegraphics[width=1\textwidth]{./Figuras/diagramaAoN.png}
 \caption{Diagrama de \textit{Activity on Node}.}
 \label{fig:AoN}
 \end{figure}
@@ -676,12 +676,13 @@ En la siguiente tabla se presentan los gastos previstos del proyecto, expresados
 \begin{tabularx}{\linewidth}{@{}|X|c|r|r|@{}}
 \hline
 \rowcolor[HTML]{C0C0C0} 
-\multicolumn{4}{|l|}{\cellcolor[HTML]{C0C0C0}COSTOS DIRECTOS} \\ \hline
+\hline
+\multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS DIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 Descripción &
   \multicolumn{1}{|l|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
-  \multicolumn{1}{|l|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
-  \multicolumn{1}{|l|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
+  \multicolumn{1}{|l|}{\cellcolor[HTML]{C0C0C0}Valor unitario(\$)} &
+  \multicolumn{1}{|l|}{\cellcolor[HTML]{C0C0C0}Valor total(\$)} \\ \hline
  Investigación &
   \multicolumn{1}{|l|}{70hs}&
   \multicolumn{1}{|l|}{1000}&
@@ -701,13 +702,15 @@ Descripción &
 
 \multicolumn{3}{|c|}{SUBTOTAL} &
   \multicolumn{1}{|l|}{620000} \\ \hline
+
 \rowcolor[HTML]{C0C0C0} 
+\hline
 \multicolumn{4}{|c|}{\cellcolor[HTML]{C0C0C0}COSTOS INDIRECTOS} \\ \hline
 \rowcolor[HTML]{C0C0C0} 
 Descripción &
   \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Cantidad} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario} &
-  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total} \\ \hline
+  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor unitario(\$)} &
+  \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Valor total(\$)} \\ \hline
 \multicolumn{1}{|l|}{Raspberry pi 4(Server)} &
   \multicolumn{1}{|l|}{1} &
   \multicolumn{1}{|l|}{27000} &
@@ -738,40 +741,40 @@ Descripción &
 
 
  
-Riesgo 1: No contar con un dispositivo de los necesarios para el testeo de las aplicaciones.
+Riesgo 1: no contar con un dispositivo de los necesarios para el testeo de las aplicaciones.
 \begin{itemize}
 	\item Severidad (S): 10.\newline 
-	Justificación: Al ser la aplicación multiplataforma, es menester contar con un dispositivo Android, un dispositivo IOS y una pc con navegador web.
+	Justificación: al ser la aplicación multiplataforma, es menester contar con un dispositivo Android, un dispositivo IOS y una pc con navegador web.
 	\item Probabilidad de ocurrencia (O): 5.\newline 
-	Justificación: En este momento no se posee un dispositivo IOS pero existen posibilidades de acceder a uno.
+	Justificación: en este momento no se posee un dispositivo IOS pero existen posibilidades de acceder a uno.
 \end{itemize}   
 
-Riesgo 2: Disminución de tiempo disponible para la realización del plan trazado.
+Riesgo 2: disminución de tiempo disponible para la realización del plan trazado.
 \begin{itemize}
 	\item Severidad (S): 7. \newline 
-	Justificación: El disminuir el tiempo diario asignado a cada tarea, retrasa todo el calendario.
+	Justificación: el disminuir el tiempo diario asignado a cada tarea, retrasa todo el calendario.
 	\item Ocurrencia (O):3. \newline 
-	Justificación: el planning está bien ajustado, y es muy poco probable que surgan actividades adicionales que ocupen al recurso humano.
+	Justificación: la planificación es correcta y es muy poco probable que surjan actividades adicionales que ocupen al recurso humano.
 \end{itemize}
 
-Riesgo 3: Daño en equipamiento utilizado en el proyecto por problemas en el suministro eléctrico.
+Riesgo 3: daño en equipamiento utilizado en el proyecto por problemas en el suministro eléctrico.
 \begin{itemize}
 	\item Severidad (S): 10.\newline 
-	Justificación: genera retrasos temporales y modificaciones al presupuesto ya que se debe adquirir nuevos recursos materiales, instalar el framework de desarrollo y acondicionarlo para continuar el desarrollo.
+	Justificación: genera retrasos temporales y modificaciones al presupuesto ya que se deben adquirir nuevos recursos materiales, instalar el framework de desarrollo y acondicionarlo para continuar el desarrollo.
 	\item Ocurrencia (O): 3.\newline 
 	Justificación: en estos momentos el equipamiento se encuentra protegido mediante un estabilizador de tensión.
 \end{itemize}	
-Riesgo 4: No contar con colaboradores para realizar la validación del sistema.
+Riesgo 4: no contar con colaboradores para realizar la validación del sistema.
 \begin{itemize}
 	\item Severidad (S): 5.\newline 
-	Justificación: es necesario que los colaboradores sean idoneos.
+	Justificación: es necesario que los colaboradores sean idóeos.
 	\item Ocurrencia (O): 8.\newline 
-	Justificación: Debido a que los colaboradores poseen otras tareas en su trabajo puede que no puedan dedicarle el tiempo necesario a las pruebas.
+	Justificación: debido a que los colaboradores poseen otras tareas en su trabajo puede que no puedan dedicarle el tiempo necesario a las pruebas.
 \end{itemize}
-Riesgo 5: Surgimiento de una alternativa con mejores prestaciones a la sugerida en el plan de trabajo(nueva librería, framework, etc).
+Riesgo 5: surgimiento de una alternativa con mejores prestaciones a la sugerida en el plan de trabajo (nueva librería, framework, etc).
 \begin{itemize}
 	\item Severidad (S): 1.\newline 
-	Justificación: el surgimiento de una nueva alternativa con mejores prestaciones a la elegida para el desarrollo puede dejar al producto en una posición de desventaja respecto a la competencia, no obstante lo cual el utilizar tecnologías ya probadas asegura un nivel de confianza mayor en cuanto a seguridad y estabilidad a lo largo del tiempo.
+	Justificación: el surgimiento de una nueva alternativa con mejores prestaciones a la elegida para el desarrollo puede dejar al producto en una posición de desventaja respecto a la competencia. No obstante, el utilizar tecnologías ya probadas asegura un nivel de confianza mayor en cuanto a seguridad y estabilidad a lo largo del tiempo.
 	\item Ocurrencia (O): 10.\newline 
 	Justificación: en el rubro informático continuamente surgen nuevas alternativas para el desarrollo. 	
 		 
@@ -809,70 +812,70 @@ c) Plan de mitigación de los riesgos que originalmente excedían el RPN máximo
   %- Probabilidad de ocurrencia (O): mientras más probable, más alto es el número (usar del 1 al 10).
   %        Justificar el motivo por el cual se asigna determinado número de (O).
           
-Riesgo 1: Se buscará contactos conocidos que posean un dispositivo de esas características.\newline
+Riesgo 1: se buscarán contactos conocidos que posean un dispositivo de esas características.\newline
 -Severidad(S) : 5.\newline
-	Justificación: Impide la validación del sistema en una plataforma.\newline
+	Justificación: impide la validación del sistema en una plataforma.\newline
 -Ocurrencia: 1.\newline
 	Justificación: es muy improbable que al momento de la validación no se encuentre el recurso.
 
-Riesgo 3: Se incorpora un sistema de alimentación ininterrumpible (UPS,  Uninterruptable Power Supply)y se mantiene todo progreso del trabajo en servidores en la nube. 
+Riesgo 3: se incorporará un sistema de alimentación ininterrumpible (UPS,  Uninterruptable Power Supply) y se mantendrá todo progreso del trabajo en servidores en la nube. 
 \newline
 -Severidad(S) : 1.\newline
-Justificación: Al tener un equipo de backup y todo lo trabajado en la nube, no existe posibilidad de demoras por este motivo.\newline
+Justificación: al tener un equipo de backup y todo lo trabajado en la nube, no existe posibilidad de demoras por este motivo.\newline
 -Ocurrencia: 1.\newline
-Justificación: al incorporar la ups, los daños a los discos rígidos se anulan.\newline
+Justificación: al incorporar la UPS, los daños a los discos rígidos se anulan.\newline
  
-Riesgo 4: Se gestiona una lista de contactos que se encargarán de validar el sistema y se genera un compromiso con los mismos.
+Riesgo 4: se gestiona una lista de contactos que se encargarán de validar el sistema y se genera un compromiso con los mismos.
 \newline
 -Severidad(S) : 5.\newline
-Justificación: No se modifica la severidad del mismo.
+Justificación: no se modifica la severidad del mismo.
 \newline
 -Ocurrencia: 2.\newline
-Justificación: Al haber varios contactos, la imposibilidad simultanea de todos es improbable.\newline
+Justificación: al haber varios contactos, la imposibilidad simultánea de todos es improbable.\newline
 
 \section{14. Gestión de la calidad}
 \label{sec:calidad}
 
 \begin{itemize}
 
-\item Req 1.1:El servidor debe tener instalado Eclipse Mosquitto como broker MQTT.
+\item Req 1.1: el servidor debe tener instalado Eclipse Mosquitto como broker MQTT.
 	\begin{itemize}
-	\item Verificación: Se verificará que el servidor se encuentre listo para recibir conexiones.
-	\item Validación: Se generarán envíos a traves de un software de envíos de paquetes TCP y se entregaran informes al cliente.
+	\item Verificación: se verificará que el servidor se encuentre listo para recibir conexiones y se generarán envíos a traves de un software de envíos de paquetes TCP.
+	\item Validación: no aplica.
 	\end{itemize}
 
 
-\item Req 1.2: El servidor debe tener endpoints para interactuar con una aplicación Web, para consultas y envío de datos hacia dispositivos clientes.
+\item Req 1.2: el servidor debe tener endpoints para interactuar con una aplicación Web, para consultas y envío de datos hacia dispositivos clientes.
 	\begin{itemize}
-	\item Verificación: Se verificará que el servidor responda correctamente a solicitudes desde dispositivos.
-	\item Validación: Se generarán peticiones según las aplicaciones programadas y se analizarán las respuestas(se entregará informe al cliente).
+	\item Verificación: se verificará que el servidor responda correctamente a solicitudes desde dispositivos.
+	\item Validación: se generarán peticiones según las aplicaciones programadas y se analizarán las respuestas (se entregará informe al cliente).
 	\end{itemize}
 
-\item Req 1.3: El servidor debe tener endpoints para interactuar con la base de datos.
+\item Req 1.3: el servidor debe tener endpoints para interactuar con la base de datos.
 	\begin{itemize}
-	\item Verificación: Se verificará la presencia de las funciones CRUD a la base de datos. 
-	\item Validación: Se validará que las funciones respondan a las aplicaciones correctamente y se entregará informe al cliente.
+	\item Verificación: se verificará la presencia de las funciones CRUD a la base de datos. 
+	\item Validación: se validará que las funciones respondan a las aplicaciones correctamente y se entregará informe al cliente.
 	\end{itemize}
 
-\item Req 2.1: El sistema debe poseer una base de datos relacional.
+\item Req 2.1: el sistema debe poseer una base de datos relacional.
 	\begin{itemize}
-	\item Verificación: Se verificará la presencia de la base de datos.  
-	\item Validación: Se cargarán tablas en las bases de datos y se validaran las funciones CRUD y se entregará informe al cliente.
+	\item Verificación: se verificará la presencia de la base de datos.  
+	\item Validación: se cargarán tablas en las bases de datos y se validaran las funciones CRUD y se entregará informe al cliente.
 	\end{itemize}
 
-\item Req 2.2: La base de datos debe poseer datos cargados por default.
+\item Req 2.2: la base de datos debe poseer datos cargados por default.
 	\begin{itemize}
-	\item Verificación: Se chequeará que la base de datos contenga datos.
-	\item Validación: Se chequeará que los datos sean correctos.
+	\item Verificación: se chequeará que la base de datos contenga datos.
+	\item Validación: se chequeará que los datos sean correctos.
 	\end{itemize}
 
-\item Req 2.3: La base de datos debe poseer datos cargados por default.
+\item Req 2.3: la base de datos debe poseer datos cargados por default.
 	\begin{itemize}
-	\item Verificación: Se chequeará que la base de datos contenga datos.
-	\item Validación: Se chequeará que los datos sean correctos.
+	\item Verificación: se chequeará que la base de datos contenga datos.
+	\item Validación: se chequeará que los datos sean correctos.
 	\end{itemize}
 	
-\item Req 2.4: La base de datos a utilizar debe poseer las siguientes tablas:
+\item Req 2.4: la base de datos a utilizar debe poseer las siguientes tablas:
 			\begin{itemize}
 				\item[]
 				\begin{itemize}
@@ -884,85 +887,85 @@ Justificación: Al haber varios contactos, la imposibilidad simultanea de todos 
 				\end{itemize}	
 			\end{itemize}	
 	\begin{itemize}	
-	\item Verificación: Se chequeará la estructura necesaria.
-	\item Validación: Se chequeará que se puedan cargar los datos en la estructura y se entregará diagrama de base de datos y datos ejemplo al cliente.
+	\item Verificación: se chequeará la estructura necesaria.
+	\item Validación: se chequeará que se puedan cargar los datos en la estructura y se entregará el diagrama de base de datos y datos ejemplo al cliente.
 	\end{itemize}	
 
-\item Req 3.1: La página web debe ser cliente del broker MQTT.
+\item Req 3.1: la página web debe ser cliente del broker MQTT.
 	\begin{itemize}
-	\item Verificación: Se verificará que la pagina sea cliente del servidor.
-	\item Validación:  Se programará el cliente siguiendo las especificaciones de bibliotecas de clientes MQTT y se validaron los datos enviados al servidor.
+	\item Verificación: se verificará que la pagina sea cliente del servidor.
+	\item Validación:  se confirmará que el broker es MQTT y no otro.--------------------------------------------------------!!!
 	\end{itemize}
-\item Req 3.2: La página web debe poseer funciones de consulta o modificación de la base de datos.
+\item Req 3.2: la página web debe poseer funciones de consulta o modificación de la base de datos.
 	\begin{itemize}
-	\item Verificación: Se verificará que desde la página se puedan cargar o modificar datos en la base de datos.
-	\item Validación:  Se validará que la interface de usuario sea práctica para el cliente.
+	\item Verificación: se verificará que desde la página se puedan cargar o modificar datos en la base de datos.
+	\item Validación:  se validarán que desde la página se puedan cargar o modificar datos en la base de datos.
 	\end{itemize}
-\item Req 3.3: La página web debe ser permitir visualización de estadísticas de pacientes o enfermeras. 
+\item Req 3.3: la página web debe ser permitir visualización de estadísticas de pacientes o enfermeras. 
 	\begin{itemize}
-	\item Verificación: Se verificará que la aplicación pueda mostrar nro de visitas a un paciente en cierto día, y la cantidad de llamadas a las que acudió cierta enfermera en un día.
-	\item Validación:  Se presentará a los clientes la forma de presentar la información y se evaluara si es del agrado o no.
+	\item Verificación: se verificará que la aplicación pueda mostrar el número de visitas a un paciente en cierto día, y la cantidad de llamadas a las que acudió cierta enfermera en un día.
+	\item Validación:  se validará que es el funcionamiento deseado por el cliente.
 	\end{itemize}	
-\item Req 3.4: La aplicación debe contener acceso con usuario y contraseña para cada persona. 
+\item Req 3.4: la aplicación debe contener acceso con usuario y contraseña para cada persona. 
 	\begin{itemize}
-	\item Verificación: Se comprobará el funcionamiento con distintos usuarios, contraseñas y modos de uso.
-	\item Validación:  Se presenta al cliente la forma de funcionamiento y el mismo evalua si es de su agrado.
+	\item Verificación: se comprobará el funcionamiento con distintos usuarios, contraseñas y modos de uso.
+	\item Validación:  se presenta al cliente la forma de funcionamiento y el mismo evalua si es de su agrado.
 	\end{itemize}		
-\item Req 4.1: La aplicación enfermera debe tener 3 modos de uso: usuario médico, usuario enfermera y usuario sistema.
+\item Req 4.1: la aplicación enfermera debe tener 3 modos de uso: usuario médico, usuario enfermera y usuario sistema.
 	\begin{itemize}
-	\item Verificación: Se comprobará que se puede logear con los distintos módos.
-	\item Validación: Se presentará al cliente los distintos modos de funcionamiento y se consultará si es del agrado.
-	\end{itemize}		
-
-\item Req 4.2: Al logearse el usuario , y contrastarse con la base de datos del sistema, se activa el modo correspondiente.
-	\begin{itemize}
-	\item Verificación:Se comprobará que se puede logear con los distintos módos y que hay una comunicación efectiva con la base de datos.
-	\item Validación: Se consultará al cliente si es del agrado..
+	\item Verificación: se comprobará que se puede logear con los distintos módos.
+	\item Validación: se presentará al cliente los distintos modos de funcionamiento y se consultará si es del agrado.
 	\end{itemize}		
 
-\item Req 4.3: La aplicación en modo enfermera debe permitir leer códigos QR.
+\item Req 4.2: al logearse el usuario , y contrastarse con la base de datos del sistema, se activa el modo correspondiente.
 	\begin{itemize}
-	\item Verificación: Se comprobará que se puede escanear el código QR de la cama del paciente cuando la aplicación está logeada en modo enfermera, se comunica con el sistema y se accionan las actividades correspondientes.
-	\item Validación:  Se presenta el funcionamiento al cliente y se consulta si es del agrado.
+	\item Verificación: se comprobará que se puede logear con los distintos módos y que hay una comunicación efectiva con la base de datos.
+	\item Validación: se consultará al cliente si es del agrado..
 	\end{itemize}		
 
-\item Req 4.4: La aplicación en modo enfermera debe poder descargar información relevante del paciente (medicamentos a suministrar, controles a realizar, contacto del médico a cargo del tratamiento, etc).	
+\item Req 4.3: la aplicación en modo enfermera debe permitir leer códigos QR.
 	\begin{itemize}
-	\item Verificación: Se verifica que se pueda descargar de la base de datos la información necesaria al presentarse el código qr.
-	\item Validación:  Se consulta al cliente si es del agrado. Puede ser afectado por el tipo de dispositivo(tamaño de visualización).
+	\item Verificación: se comprobará que se puede escanear el código QR de la cama del paciente cuando la aplicación está logeada en modo enfermera, se comunica con el sistema y se accionan las actividades correspondientes.
+	\item Validación:  se presenta el funcionamiento al cliente y se consulta si es del agrado.
 	\end{itemize}		
 
-\item Req 4.5: La aplicación en modo sistema debe mostrar las habitaciones sin atención, según una tabla de prioridades y en caso de igualdad de prioridades, mostrár según el orden de llamada.
+\item Req 4.4: la aplicación en modo enfermera debe poder descargar información relevante del paciente (medicamentos a suministrar, controles a realizar, contacto del médico a cargo del tratamiento, etc).	
 	\begin{itemize}
-	\item Verificación: Se loguea en la aplicación como usuario sistema y se verifica la visualización correcta.
-	\item Validación:  Se presenta al cliente y se consulta si es de su agrado.
+	\item Verificación: se verifica que se pueda descargar de la base de datos la información necesaria al presentarse el código qr.
+	\item Validación:  se consulta al cliente si es del agrado. Puede ser afectado por el tipo de dispositivo(tamaño de visualización).
+	\end{itemize}		
+
+\item Req 4.5: la aplicación en modo sistema debe mostrar las habitaciones sin atención, según una tabla de prioridades y en caso de igualdad de prioridades, mostrár según el orden de llamada.
+	\begin{itemize}
+	\item Verificación: se loguea en la aplicación como usuario sistema y se verifica la visualización correcta.
+	\item Validación:  se presenta al cliente y se consulta si es de su agrado.
 	\end{itemize}		
 
 
-\item Req 4.6: El modo usuario médico y el modo usuario enfermera deben poder enviar mensajes de textos o sonido comprimido en 32kbps (mp3).
+\item Req 4.6: el modo usuario médico y el modo usuario enfermera deben poder enviar mensajes de textos o sonido comprimido en 32kbps (mp3).
 	\begin{itemize}
-	\item Verificación: Se hace una demostración de envío de audio entre dos usuarios enfermera y médico.
-	\item Validación:  Se muestra al cliente y se consulta si es de su agrado.
+	\item Verificación: se hace una demostración de envío de audio entre dos usuarios enfermera y médico.
+	\item Validación:  se muestra al cliente y se consulta si es de su agrado.
 	\end{itemize}		
 
-\item Req 5.1: Confección de documento con información relativa a la base de datos: detalles de la misma y de API para acceder.
+\item Req 5.1: confección de documento con información relativa a la base de datos: detalles de la misma y de API para acceder.
 	\begin{itemize}
-	\item Verificación: Se verifica la presencia de la documentación.
-	\item Validación:  Se presenta al cliente.
+	\item Verificación: se verifica la presencia de la documentación.
+	\item Validación:  se presenta al cliente.
 	\end{itemize}	
 
-\item Req 5.2: Memoria del proyecto con diagramas UML de aplicación modo sistema, aplicación modo enfermera, aplicación modo médico y página web.
+\item Req 5.2: memoria del proyecto con diagramas UML de aplicación modo sistema, aplicación modo enfermera, aplicación modo médico y página web.
 
 	\begin{itemize}
-	\item Verificación: Se verifica la presencia de la documentación.
-	\item Validación:  Se presenta al cliente.
+	\item Verificación: se verifica la presencia de la documentación.
+	\item Validación:  se presenta al cliente.
 	\end{itemize}		
 		
-\item Req 6.2: El sistema debe integrar el funcionamiento del servidor con base de datos , aplicación web y aplicaciones moviles.
+\item Req 6.2: el sistema debe integrar el funcionamiento del servidor con base de datos , aplicación web y aplicaciones moviles.
 
 	\begin{itemize}
-	\item Verificación: Se realiza un video con una demostración del sistema.
-	\item Validación:  Se presenta al cliente el video de la funcionalidad. Se genera una simulación real con colaboradores.
+	\item Verificación: se realiza un video con una demostración del sistema.
+	\item Validación:  se presenta al cliente el video de la funcionalidad. Se genera una simulación real con colaboradores.
 	\end{itemize}		
 
 \end{itemize}
