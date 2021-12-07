@@ -72,6 +72,8 @@ Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios 
 & 18/11/2021 \\ \hline
 4      & Se completa la totalidad del documento
 & 25/11/2021 \\ \hline
+5      & Se corrige el punto 14 y la ubicación de graficos de diagramas de AoN.
+& 7/12/2021 \\ \hline
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
 %		  Así                                                    & dd/mm/aaaa \\ \hline
@@ -271,9 +273,7 @@ El presente proyecto incluye:
 	\item Investigación y estudio del protocolo MQTT, bases de datos SQL y NoSQL, programación de aplicaciones web y programación de aplicaciones multiplataforma.	
 	\item Desarrollo local del broker que registre en un log las actividades realizadas y su horario de realización. 
 	\item Desarrollo local de una página web de configuración.
-	\item Desarrollo local de una aplicación cliente médico con envío/recepción de mensajes de audio/texto/alarmas.
-	\item Desarrollo local de una aplicación cliente enfermera con envío/recepción de mensajes de audio/texto/alarmas y escaneo de QR para identificar paciente. 
-	\item Desarrollo local de una aplicación que asigna enfermeras a pacientes de acuerdo a la indicación de un médico. Por ejemplo, todos los días a las 17 hs, medir la presión arterial del paciente ``x", independientemente de la enfermera. Esta aplicación permite monitorizar el estado de las habitaciones.
+	\item Desarrollo local de una aplicación con 3 modos de funcionamiento : modo médico con envío/recepción de mensajes de audio/texto/alarmas; modo enfermera con envío/recepción de mensajes de audio/texto/alarmas y escaneo de QR para identificar paciente; y modo sistema que asigna enfermeras a pacientes de acuerdo a la indicación de un médico. Por ejemplo, todos los días a las 17 hs, medir la presión arterial del paciente ``x", independientemente de la enfermera. Esta aplicación en modo sistema permite monitorizar el estado de las habitaciones.
 	\item Documentación de las aplicaciones desarrolladas.
 
 \end{itemize}
@@ -379,9 +379,14 @@ Los principales requerimientos relevados son los siguientes:
 		
 	\item Requerimientos de integración de sistema:	
 			\begin{enumerate}
-			\item El sistema debe integrar el funcionamiento del servidor con base de datos , aplicación web y aplicaciones moviles.
-			
+			\item El sistema debe integrar el funcionamiento del servidor con base de datos , aplicación web y aplicaciones moviles.			
 			\end{enumerate}	
+			
+	\item Requerimientos de entrega del producto:	
+			\begin{enumerate}
+			\item El código fuente del servidor debe ser subido a dockerhub y compartido con la comunidad.	
+			\item El código fuente de la aplicación debe ser subido a github y compartido con la comunidad.
+			\end{enumerate}			
 	
 
 \end{enumerate}
@@ -844,129 +849,82 @@ Justificación: al haber varios contactos, la imposibilidad simultánea de todos
 
 \begin{itemize}
 
-\item Req 1.1: el servidor debe tener instalado Eclipse Mosquitto como broker MQTT.
+\item Req 1: requisitos de el servidor(agrupo los subrequisitos 1.1,1.2 y 1.3).
 	\begin{itemize}
-	\item Verificación: se verificará que el servidor se encuentre listo para recibir conexiones y se generarán envíos a traves de un software de envíos de paquetes TCP.
+	\item Verificación: se verificará que el servidor MOSQUITTO MQTT se encuentre en condiciones de ser utilizado y acepte comunicación con aplicaciones standares de clientes MQTT.
 	\item Validación: no aplica.
 	\end{itemize}
 
 
-\item Req 1.2: el servidor debe tener endpoints para interactuar con una aplicación Web, para consultas y envío de datos hacia dispositivos clientes.
+\item Req 2: requerimientos relativos a la base de datos(agrupo 2.1,2.2 y 2.3).
 	\begin{itemize}
-	\item Verificación: se verificará que el servidor responda correctamente a solicitudes desde una aplicación especialmente desarrollada para ensayos de test.
-	\item Validación: se comprobará correcto funcionamiento en la pagina web desarrollada.
-	\end{itemize}
-
-\item Req 1.3: el servidor debe tener endpoints para interactuar con la base de datos.
-	\begin{itemize}
-	\item Verificación: se verificará la presencia de las funciones CRUD a la base de datos, y se realizarán test unitarios en las distintas funciones. 
-	\item Validación: se validará que las funciones respondan a las aplicaciones correctamente.
-	\end{itemize}
-
-\item Req 2.1: el sistema debe poseer una base de datos relacional.
-	\begin{itemize}
-	\item Verificación: se verificará la presencia de la base de datos.  
+	\item Verificación: se verificará la presencia de la base de dato, con las tablas definidas y el correcto funcionamiento de los endpoints con programas de prueba.
 	\item Validación: no aplica.
 	\end{itemize}
 
-\item Req 2.2: la base de datos debe poseer datos cargados por default.
+
+\item Req 3.1 y 3.2: La página web debe poder consultar y modificar a la base de datos.
 	\begin{itemize}
-	\item Verificación: se chequeará que la base de datos contenga datos.
-	\item Validación: no aplica.
+	\item Verificación: se verificará que desde la página se puedan cargar/editar/consultar datos de la base de datos.
+	\item Validación:  no aplica.
 	\end{itemize}
+\item Req 3.3: La página web debe permitir obtener estadísticas de pacientes o enfermeras.
+	\begin{itemize}
+	\item Verificación: se verificará que desde la página se pueda consultar cuantas veces por día se atiende a un paciente y cuantos pacientes atendió una enfermera.
+	\item Validación:  no aplica.
+	\end{itemize}	
+\item Req 3.4: La página web contener acceso con usuario y contraseña para cada persona.
+	\begin{itemize}
+	\item Verificación: se verificará el funcionamiento según el usuario logeado.
+	\item Validación:  no aplica.
+	\end{itemize}		
 	
-\item Req 2.3: la base de datos a utilizar debe poseer las siguientes tablas:
-			\begin{itemize}
-				\item[]
-				\begin{itemize}
-					\item Habitaciones
-					\item Pacientes			
-					\item Médicos
-					\item Enfermeras			
-					\item Eventos 
-				\end{itemize}	
-			\end{itemize}	
-	\begin{itemize}	
-	\item Verificación: se chequeará la estructura necesaria.
-	\item Validación: no aplica.
-	\end{itemize}	
 
-\item Req 3.1: la página web debe ser cliente del broker MQTT.
+\item Req 4.1 y 4.2 La aplicación móvil debe tener 3 modos de uso: usuario médico, usuario enfermera y usuario sistema. El modo de uso se activa luego de logearse el usuario.
 	\begin{itemize}
-	\item Verificación: se verificará que se utilice un broker MOSQUITTO MQTT.
-	\item Validación:  no aplica.
-	\end{itemize}
-\item Req 3.2: la página web debe poseer funciones de consulta o modificación de la base de datos.
-	\begin{itemize}
-	\item Verificación: se verificará que desde la página se puedan cargar o modificar datos en la base de datos.
-	\item Validación:  no aplica.
-	\end{itemize}
-\item Req 3.3: la página web debe ser permitir visualización de estadísticas de pacientes o enfermeras. 
-	\begin{itemize}
-	\item Verificación: se verificará que la aplicación pueda mostrar el número de visitas a un paciente en cierto día, y la cantidad de llamadas a las que acudió cierta enfermera en un día.
-	\item Validación:  se validará que se pueda visualizar estadísticas de las enfermeras y de los pacientes.
-	\end{itemize}	
-\item Req 3.4: la aplicación debe contener acceso con usuario y contraseña para cada persona. 
-	\begin{itemize}
-	\item Verificación: se comprobará el funcionamiento con distintos usuarios, contraseñas y modos de uso.
+	\item Verificación: se verificará el funcionamiento logeandose de distintos modos.
 	\item Validación: no aplica.
 	\end{itemize}		
-\item Req 4.1: la aplicación enfermera debe tener 3 modos de uso: usuario médico, usuario enfermera y usuario sistema.
+	
+\item Req 4.3 y 4.4 La aplicación en modo enfermera debe poder descargar información del paciente y debe permitir leer código QR.
 	\begin{itemize}
-	\item Verificación: se comprobará que se puede logear con los distintos módos.
+	\item Verificación: se verificará el funcionamiento utilizando un código QR específico que identifique la cama en la base de datos y se verificará que pueda descargar información del paciente.
 	\item Validación: no aplica.
 	\end{itemize}		
 
-\item Req 4.2: al logearse el usuario , y contrastarse con la base de datos del sistema, se activa el modo correspondiente.
-	\begin{itemize}
-	\item Verificación: se comprobará que se puede logear con los distintos módos y que hay una comunicación efectiva con la base de datos.
-	\item Validación: no aplica.
-	\end{itemize}		
 
-\item Req 4.3: la aplicación en modo enfermera debe permitir leer códigos QR.
+\item Req 4.5: La aplicación en modo sistema debe mostrar las habitaciones sin atención, según una tabla de prioridades y en caso de igualdad de prioridades, mostrar según el orden de llamada.
 	\begin{itemize}
-	\item Verificación: se comprobará que se puede escanear el código QR de la cama del paciente cuando la aplicación está logeada en modo enfermera, se comunica con el sistema y se accionan las actividades correspondientes.
-	\item Validación:  se realiza la acción en dispositivos de colaboradores en un entorno real de uso.
-	\end{itemize}		
-
-\item Req 4.4: la aplicación en modo enfermera debe poder descargar información relevante del paciente (medicamentos a suministrar, controles a realizar, contacto del médico a cargo del tratamiento, etc).	
-	\begin{itemize}
-	\item Verificación: se verifica que se pueda descargar de la base de datos la información necesaria al presentarse el código qr.
-	\item Validación: se realiza la acción en dispositivos de colaboradores en un entorno real de uso.
-	\end{itemize}		
-
-\item Req 4.5: la aplicación en modo sistema debe mostrar las habitaciones sin atención, según una tabla de prioridades y en caso de igualdad de prioridades, mostrár según el orden de llamada.
-	\begin{itemize}
-	\item Verificación: se loguea en la aplicación como usuario sistema y se verifica la visualización correcta.
-	\item Validación:  no aplica.
-	\end{itemize}		
-
-
-\item Req 4.6: el modo usuario médico y el modo usuario enfermera deben poder enviar mensajes de textos o sonido comprimido en 32kbps (mp3).
-	\begin{itemize}
-	\item Verificación: se ensaya el envío de mensajes en un entorno controlado(dentro del laboratorio).
-	\item Validación:  se realiza la acción en los dispositivos de los colaboradores en un entorno real de uso.
-	\end{itemize}		
-
-\item Req 5.1: confección de documento con información relativa a la base de datos: detalles de la misma y de API para acceder.
-	\begin{itemize}
-	\item Verificación: se verifica la presencia de la documentación.
+	\item Verificación: se carga una tabla de prioridades por habitacióny se verifica el funcionamiento cuando se realizan simulaciones de distintas situaciones.
 	\item Validación:  No aplica.
 	\end{itemize}	
 
-\item Req 5.2: memoria del proyecto con diagramas UML de aplicación modo sistema, aplicación modo enfermera, aplicación modo médico y página web.
+\item Req 4.6: El modo usuario médico y el modo usuario enfermera deben poder enviar mensajes de textos o sonido comprimido en 32kbps(mp3)
+	\begin{itemize}
+	\item Verificación: se realiza una simulación enviando un audio de enfermera a médico y de médico a enfermera.
+	\item Validación:  se valida con ayuda de los colaboradores en un entorno real junto con todo el sistema.
+	\end{itemize}		
+
+\item Req 5: requisitos de documentación(agrupados 5.1 y 5.2).
 
 	\begin{itemize}
-	\item Verificación: se verifica la presencia de la documentación.
-	\item Validación:  No aplica.
-	\end{itemize}		
+	\item Verificación: se verifica la presencia de la documentación de cada software.
+	\item Validación: no aplica.
+	\end{itemize}	
 		
-\item Req 6.2: el sistema debe integrar el funcionamiento del servidor con base de datos , aplicación web y aplicaciones moviles.
+\item Req 6: requisitos del sistema completo.
 
 	\begin{itemize}
 	\item Verificación: se realiza una simulación de funcionamiento del sistema en el laboratorio.
-	\item Validación: se instala en dispositivos de colaboradores y se realiza un ejemplo de uso real del sistema en una entidad hospitalaria.
+	\item Validación: Se entregará el prototipo de todo el sistema y las aplicaciones a los colaboradores para que lo utilicen durante una semana y se evaluará los resultados.
 	\end{itemize}		
+
+\item Req 7: requisitos de entregas.
+
+	\begin{itemize}
+	\item Verificación: se comprueba la presencia de los contenedores con el código fuente generado. Se descargan y se regenera todo el sistema nuevamente.
+	\item Validación: no aplica.
+	\end{itemize}			
 
 \end{itemize}
 
