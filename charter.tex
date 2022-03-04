@@ -72,7 +72,7 @@ Revisión & \multicolumn{1}{c|}{\cellcolor[HTML]{C0C0C0}Detalles de los cambios 
 & 18/11/2021 \\ \hline
 4      & Se completa la totalidad del documento
 & 25/11/2021 \\ \hline
-5      & Se corrige el punto 14 y la ubicación de graficos de diagramas de AoN.
+5      & Se corrige el punto 14 y la ubicación de figuras de diagramas de AoN.
 & 7/12/2021 \\ \hline
 %		  Se puede agregar algo más \newline
 %		  En distintas líneas \newline
@@ -273,7 +273,7 @@ El presente proyecto incluye:
 	\item Investigación y estudio del protocolo MQTT, bases de datos SQL y NoSQL, programación de aplicaciones web y programación de aplicaciones multiplataforma.	
 	\item Desarrollo local del broker que registre en un log las actividades realizadas y su horario de realización. 
 	\item Desarrollo local de una página web de configuración.
-	\item Desarrollo local de una aplicación con 3 modos de funcionamiento : modo médico con envío/recepción de mensajes de audio/texto/alarmas; modo enfermera con envío/recepción de mensajes de audio/texto/alarmas y escaneo de QR para identificar paciente; y modo sistema que asigna enfermeras a pacientes de acuerdo a la indicación de un médico. Por ejemplo, todos los días a las 17 hs, medir la presión arterial del paciente ``x", independientemente de la enfermera. Esta aplicación en modo sistema permite monitorizar el estado de las habitaciones.
+	\item Desarrollo local de una aplicación con 3 modos de funcionamiento: modo médico con envío/recepción de mensajes de audio/texto/alarmas; modo enfermera con envío/recepción de mensajes de audio/texto/alarmas y escaneo de QR para identificar paciente; y modo sistema que asigna enfermeras a pacientes de acuerdo a la indicación de un médico. Por ejemplo, todos los días a las 17 hs, medir la presión arterial del paciente ``x", independientemente de la enfermera. Esta aplicación en modo sistema permite monitorizar el estado de las habitaciones.
 	\item Documentación de las aplicaciones desarrolladas.
 
 \end{itemize}
@@ -863,43 +863,43 @@ Justificación: al haber varios contactos, la imposibilidad simultánea de todos
 	\end{itemize}
 
 
-\item Req 3.1 y 3.2: La página web debe poder consultar y modificar a la base de datos.
+\item Req 3.1 y 3.2: la página web debe poder consultar y modificar a la base de datos.
 	\begin{itemize}
 	\item Verificación: se verificará que desde la página se puedan cargar/editar/consultar datos de la base de datos.
 	\item Validación:  no aplica.
 	\end{itemize}
-\item Req 3.3: La página web debe permitir obtener estadísticas de pacientes o enfermeras.
+\item Req 3.3: la página web debe permitir obtener estadísticas de pacientes o enfermeras.
 	\begin{itemize}
 	\item Verificación: se verificará que desde la página se pueda consultar cuantas veces por día se atiende a un paciente y cuantos pacientes atendió una enfermera.
 	\item Validación:  no aplica.
 	\end{itemize}	
-\item Req 3.4: La página web contener acceso con usuario y contraseña para cada persona.
+\item Req 3.4: la página web contener acceso con usuario y contraseña para cada persona.
 	\begin{itemize}
 	\item Verificación: se verificará el funcionamiento según el usuario logeado.
 	\item Validación:  no aplica.
 	\end{itemize}		
 	
 
-\item Req 4.1 y 4.2 La aplicación móvil debe tener 3 modos de uso: usuario médico, usuario enfermera y usuario sistema. El modo de uso se activa luego de logearse el usuario.
+\item Req 4.1 y 4.2 la aplicación móvil debe tener 3 modos de uso: usuario médico, usuario enfermera y usuario sistema. El modo de uso se activa luego de logearse el usuario.
 	\begin{itemize}
-	\item Verificación: se verificará el funcionamiento logeandose de distintos modos.
+	\item Verificación: se verificará el funcionamiento ingresando de distintos modos.
 	\item Validación: no aplica.
 	\end{itemize}		
 	
-\item Req 4.3 y 4.4 La aplicación en modo enfermera debe poder descargar información del paciente y debe permitir leer código QR.
+\item Req 4.3 y 4.4 la aplicación en modo enfermera debe poder descargar información del paciente y debe permitir leer código QR.
 	\begin{itemize}
 	\item Verificación: se verificará el funcionamiento utilizando un código QR específico que identifique la cama en la base de datos y se verificará que pueda descargar información del paciente.
 	\item Validación: no aplica.
 	\end{itemize}		
 
 
-\item Req 4.5: La aplicación en modo sistema debe mostrar las habitaciones sin atención, según una tabla de prioridades y en caso de igualdad de prioridades, mostrar según el orden de llamada.
+\item Req 4.5: la aplicación en modo sistema debe mostrar las habitaciones sin atención, según una tabla de prioridades y en caso de igualdad de prioridades, mostrar según el orden de llamada.
 	\begin{itemize}
-	\item Verificación: se carga una tabla de prioridades por habitacióny se verifica el funcionamiento cuando se realizan simulaciones de distintas situaciones.
-	\item Validación:  No aplica.
+	\item Verificación: se carga una tabla de prioridades por habitación y se verifica el funcionamiento cuando se realizan simulaciones de distintas situaciones.
+	\item Validación:  no aplica.
 	\end{itemize}	
 
-\item Req 4.6: El modo usuario médico y el modo usuario enfermera deben poder enviar mensajes de textos o sonido comprimido en 32kbps(mp3)
+\item Req 4.6: el modo usuario médico y el modo usuario enfermera deben poder enviar mensajes de textos o sonido comprimido en 32kbps(mp3)
 	\begin{itemize}
 	\item Verificación: se realiza una simulación enviando un audio de enfermera a médico y de médico a enfermera.
 	\item Validación:  se valida con ayuda de los colaboradores en un entorno real junto con todo el sistema.
@@ -916,7 +916,7 @@ Justificación: al haber varios contactos, la imposibilidad simultánea de todos
 
 	\begin{itemize}
 	\item Verificación: se realiza una simulación de funcionamiento del sistema en el laboratorio.
-	\item Validación: Se entregará el prototipo de todo el sistema y las aplicaciones a los colaboradores para que lo utilicen durante una semana y se evaluará los resultados.
+	\item Validación: se entregará el prototipo de todo el sistema y las aplicaciones a los colaboradores para que lo utilicen durante una semana y se evaluará los resultados.
 	\end{itemize}		
 
 \item Req 7: requisitos de entregas.
